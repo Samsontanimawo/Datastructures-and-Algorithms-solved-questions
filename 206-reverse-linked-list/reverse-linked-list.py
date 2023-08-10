@@ -1,3 +1,4 @@
+
 class Solution(object):
     def reverseList(self, head):
         p1, p2 = None, head
@@ -7,5 +8,5 @@ class Solution(object):
             p2.next = p1
             p1 = p2
             p2 = p3
+
         return p1
-        
