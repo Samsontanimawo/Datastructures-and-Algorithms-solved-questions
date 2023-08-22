@@ -1,6 +1,5 @@
 class Solution(object):
     def removeDuplicates(self, nums):
-
         left, right = 0, len(nums)-1
 
         while left < len(nums)-1:
