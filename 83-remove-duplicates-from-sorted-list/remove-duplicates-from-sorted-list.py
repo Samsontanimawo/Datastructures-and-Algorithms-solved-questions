@@ -1,6 +1,6 @@
-class Solution:
-    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
-
+class Solution(object):
+    def deleteDuplicates(self, head):
+        
         p1 = head
 
         while p1 and p1.next:
