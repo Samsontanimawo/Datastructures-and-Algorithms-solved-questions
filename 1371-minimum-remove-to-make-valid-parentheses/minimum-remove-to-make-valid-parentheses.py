@@ -1,6 +1,8 @@
+# (())))))
+
 class Solution(object):
     def minRemoveToMakeValid(self, s):
-        s, N, stack = list(s), len(s), []
+        stack, s, N = [], list(s), len(s)
 
         for index in range(N):
             if s[index] == "(":
@@ -12,8 +14,8 @@ class Solution(object):
 
                 else:
                     s[index] = ""
-
         for index in stack:
             s[index] = ""
-
-        return "".join(s)    
+        
+        return "".join(s)
+        
