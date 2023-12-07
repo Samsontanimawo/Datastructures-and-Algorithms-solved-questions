@@ -1,28 +1,19 @@
 class Solution:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
-        
-        k = len(nums)-k
-        
-        def quickSelect(left, right):
-            partition = left
-            pivot = nums[right]
-            
-            
-            for index in range(left, right):
-                if nums[index] <= pivot:
-                    nums[partition], nums[index] = nums[index], nums[partition]
-                    partition +=1
-                    
-            nums[partition], nums[right] = nums[right], nums[partition]
-            
-            if partition > k:
-                return quickSelect(left, partition - 1)
-            
-            elif partition < k:
-                return quickSelect(partition + 1, right)
-            
-            else:
-                return nums[partition]
-            
-        return quickSelect(0, len(nums)-1)
-        
+# @param {integer[]} nums
+# @param {integer} k
+# @return {integer}
+    def findKthLargest(self, nums, k):
+    # QuickSelect idea: AC in 52 ms
+    # ---------------------------
+    #
+        pivot = nums[0]
+        left  = [l for l in nums if l < pivot]
+        equal = [e for e in nums if e == pivot]
+        right = [r for r in nums if r > pivot]
+
+        if k <= len(right):
+            return self.findKthLargest(right, k)
+        elif (k - len(right)) <= len(equal):
+            return equal[0]
+        else:
+            return self.findKthLargest(left, k - len(right) - len(equal))
