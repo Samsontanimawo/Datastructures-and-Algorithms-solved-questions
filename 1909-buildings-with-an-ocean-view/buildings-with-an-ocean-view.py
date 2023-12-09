@@ -18,10 +18,10 @@ class Solution(object):
                 maxHeight = heights[index]
 
         # Reverse the result list to obtain the order from left to right
-        return result[::-1]
+        return result[::-1] # Result = [ 4 3 1 ] = [1 3 4] = Return the index = [0, 2, 3]
 
 # Example usage:
 #solution_instance = Solution()
 #result = solution_instance.findBuildings([4, 2, 3, 1])
 #print(result)
-# Result = [ 4 3 1 ] = [1 3 4] = [0, 2, 3]
+
