@@ -13,12 +13,12 @@ class Solution(object):
                         return False
                                         
                     
-                    num = 0
+                    steps = 0
                     
                     while right < len(abbr) and abbr[right].isdigit():
-                        num = num * 10 + int(abbr[right])
+                        steps = steps * 10 + int(abbr[right])
                         right +=1
-                    left += num
+                    left += steps
                     
             else:
                 left +=1
