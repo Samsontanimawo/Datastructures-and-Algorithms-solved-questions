@@ -1,10 +1,10 @@
 class Solution(object):
     def minRemoveToMakeValid(self, s):
-        s = list(s)
+        convertStringToList = list(s)
         stack = []
 
         for index in range(len(s)):
-            if s[index] == "(":
+            if convertStringToList[index] == "(":
                 stack.append(index)
 
             elif s[index] == ")":
@@ -12,9 +12,9 @@ class Solution(object):
                     stack.pop()
 
                 else:
-                    s[index] = ""
+                    convertStringToList[index] = ""
 
         for index in stack:
-            s[index] = ""
+            convertStringToList[index] = ""
 
-        return "".join(s)
+        return "".join(convertStringToList)
