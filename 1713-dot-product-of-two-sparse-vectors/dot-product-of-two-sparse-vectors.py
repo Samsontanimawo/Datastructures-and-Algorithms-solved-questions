@@ -1,37 +1,21 @@
 class SparseVector:
     def __init__(self, nums):
-        
-        self.tuple = []
-        
-        for index, num in enumerate(nums):
-            self.tuple.append((index, num))
-        
-        
+        # Store the indices and values of non-zero elements in a dictionary
+        self.sparse_dict = {i: nums[i] for i in range(len(nums)) if nums[i] != 0}
 
+    def dotProduct(self, vec):
+        # Iterate through the indices and values of non-zero elements in both vectors
+        result = 0
+        for i, val in self.sparse_dict.items():
+            if i in vec.sparse_dict:
+                result += val * vec.sparse_dict[i]
+        return result
 
-        
-    def dotProduct(self, vector):
-        
-        dotProduct = left = right = 0
-        
-        while left < len(self.tuple) and right < len(vector.tuple):
-            leftIndex, leftNum = self.tuple[left]
-            rightIndex, rightNum = vector.tuple[right]
-            
-            if leftIndex == rightIndex:
-                dotProduct += leftNum * rightNum
-                left +=1
-                right +=1
-                
-            elif leftIndex < rightIndex:
-                right -=1
-                
-            else:
-                left +=1
-                
-        return dotProduct
-    
-    """
-    O(N) TIME & O(1) SPACE
-    """
-        
+# Example usage:
+#nums1 = [1, 0, 0, 2, 3]
+#nums2 = [0, 3, 0, 4, 0]
+
+#v1 = SparseVector(nums1)
+#v2 = SparseVector(nums2)
+
+#print(v1.dotProduct(v2))  # Output: 8
