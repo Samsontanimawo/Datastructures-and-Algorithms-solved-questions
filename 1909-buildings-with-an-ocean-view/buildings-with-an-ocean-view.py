@@ -1,10 +1,18 @@
 class Solution(object):
     def findBuildings(self, heights):
-       maxHeight, result = 0, []
+        # Input: heights = [4,2,3,1]
+#       Output: [0, 6, 2,3]
+        # Result [     3]
+        # MaxHeight = 6
 
-       for index in range(len(heights)-1,-1,-1):
-         if maxHeight < heights[index]:
-           result.append(index)
-           maxHeight = heights[index]
+        maxHeight, result = 0, []
 
-       return result[::-1] 
+        if not heights:
+            return None
+
+        for index in range(len(heights)-1, -1, -1):
+            if heights[index] > maxHeight:
+                result.append(index)
+                maxHeight = heights[index]
+
+        return result [::-1]
