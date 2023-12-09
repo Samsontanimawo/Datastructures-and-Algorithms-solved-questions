@@ -7,7 +7,7 @@ class Solution(object):
             if convertStringToList[index] == "(":
                 stack.append(index)
 
-            elif s[index] == ")":
+            elif convertStringToList[index] == ")":
                 if stack:
                     stack.pop()
 
