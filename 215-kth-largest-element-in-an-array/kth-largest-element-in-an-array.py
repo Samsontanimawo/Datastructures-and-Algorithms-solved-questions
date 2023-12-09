@@ -1,19 +1,19 @@
-class Solution:
-# @param {integer[]} nums
-# @param {integer} k
-# @return {integer}
-    def findKthLargest(self, nums, k):
-    # QuickSelect idea: AC in 52 ms
-    # ---------------------------
-    #
-        pivot = nums[0]
-        left  = [l for l in nums if l < pivot]
-        equal = [e for e in nums if e == pivot]
-        right = [r for r in nums if r > pivot]
+import heapq
 
-        if k <= len(right):
-            return self.findKthLargest(right, k)
-        elif (k - len(right)) <= len(equal):
-            return equal[0]
-        else:
-            return self.findKthLargest(left, k - len(right) - len(equal))
+class Solution(object):
+    def findKthLargest(self, nums, k):
+        # Create an empty min heap to keep track of the k largest elements
+        min_heap = []
+
+        # Iterate through the elements in the input list
+        for num in nums:
+            # Push the negative of the element onto the min heap
+            # (using negative values to simulate a max heap)
+            heapq.heappush(min_heap, num)
+
+            # If the size of the heap exceeds k, pop the smallest element
+            if len(min_heap) > k:
+                heapq.heappop(min_heap)
+
+        # The top of the heap now contains the kth largest element
+        return min_heap[0]
