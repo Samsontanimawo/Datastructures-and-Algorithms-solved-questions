@@ -16,5 +16,6 @@ class Solution(object):
         else:
             return left or right
 
-            # O(N) Time. O(1) space
+        # O(N) Time. O(H) space, where H is the height of the binary tree.
+
         
