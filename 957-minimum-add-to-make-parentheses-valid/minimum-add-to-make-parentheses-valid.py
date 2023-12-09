@@ -2,20 +2,18 @@
 
 class Solution(object):
     def minAddToMakeValid(self, s):
-        openP = closedP = addedP = 0
+        addedP = closedP = openP = 0
 
-        for index in range(len(s)):
-            if s[index] == "(":
+        for char in s:
+            if char == "(":
                 openP +=1
 
-            elif s[index] == ")":
+            elif char == ")":
                 if closedP < openP:
                     closedP +=1
+
                 else:
                     addedP +=1
 
         addedP += openP - closedP
-
         return addedP
-
-                
