@@ -3,11 +3,11 @@ class Solution(object):
 
         if not root:
             return []
-        
-        minColumn = maxColumn = 0
+
         hashmap = defaultdict(list)
         queue = deque([(root, 0)])
-        
+        minColumn = maxColumn = 0
+
         while queue:
             node, columnIndex = queue.popleft()
 
@@ -17,7 +17,7 @@ class Solution(object):
                 maxColumn = max(maxColumn, columnIndex)
 
             if node.left:
-                queue.append((node.left, columnIndex - 1))
+                queue.append((node.left, columnIndex-1))
 
             if node.right:
                 queue.append((node.right, columnIndex + 1))
