@@ -12,27 +12,31 @@ class Solution(object):
         if not root:
             return []
 
-
+        # Initialize minColumn and maxColumn
         minColumn = maxColumn = 0
+        # Use a defaultdict to store nodes at each column
         hashmap = defaultdict(list)
-        queue = deque([(root, 0)]) # ROOT = NODE. 0 = COLUMN INDEX
+        # Use a deque for level order traversal (FIFO)
+        queue = deque([(root, 0)])  # ROOT = NODE. 0 = COLUMN INDEX
  
-        
         while queue:
-            node, columnIndex = queue.popleft() # Pop off while there's something in the queue
+            # Pop off while there's something in the queue
+            node, columnIndex = queue.popleft()
 
             if node:
+                # Store the node's value in the hashmap at the corresponding column
                 hashmap[columnIndex].append(node.val)
+                # Update minColumn and maxColumn based on the current column index
                 minColumn = min(minColumn, columnIndex)
                 maxColumn = max(maxColumn, columnIndex)
 
             if node.left:
-                queue.append((node.left, columnIndex -1))
+                # Enqueue the left child with a decreased column index
+                queue.append((node.left, columnIndex - 1))
                 
             if node.right:
+                # Enqueue the right child with an increased column index
                 queue.append((node.right, columnIndex + 1))
 
+        # Construct the result by extracting nodes' values for each column
         return [hashmap[index] for index in range(minColumn, maxColumn + 1)]
-
-
-
