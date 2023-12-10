@@ -1,10 +1,10 @@
 class Solution(object):
     def verticalOrder(self, root):
-        
+
         if not root:
             return []
 
-        hashmap, queue, minColumn, maxColumn = defaultdict(list), deque([(root, 0)]), 0, 0
+        minColumn, maxColumn, queue, hashmap = 0, 0, deque([(root, 0)]), defaultdict(list)
 
         while queue:
             node, columnIndex = queue.popleft()
@@ -15,8 +15,8 @@ class Solution(object):
                 maxColumn = max(maxColumn, columnIndex)
 
             if node.left:
-                queue.append((node.left, columnIndex-1))
-            
+                queue.append((node.left, columnIndex - 1))
+
             if node.right:
                 queue.append((node.right, columnIndex + 1))
 
