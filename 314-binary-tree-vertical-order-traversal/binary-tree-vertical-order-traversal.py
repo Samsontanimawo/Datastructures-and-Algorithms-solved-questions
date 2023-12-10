@@ -1,12 +1,15 @@
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 class Solution(object):
     def verticalOrder(self, root):
-
         if not root:
             return []
 
-        hashmap = defaultdict(list)
-        queue = deque([(root, 0)])
-        minColumn = maxColumn = 0
+        hashmap, queue, minColumn, maxColumn = defaultdict(list), deque([(root, 0)]), 0, 0
 
         while queue:
             node, columnIndex = queue.popleft()
@@ -17,8 +20,8 @@ class Solution(object):
                 maxColumn = max(maxColumn, columnIndex)
 
             if node.left:
-                queue.append((node.left, columnIndex-1))
-
+                queue.append((node.left, columnIndex - 1))
+            
             if node.right:
                 queue.append((node.right, columnIndex + 1))
 
