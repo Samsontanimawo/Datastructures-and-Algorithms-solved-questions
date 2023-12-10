@@ -1,18 +1,19 @@
 class Solution(object):
     def simplifyPath(self, path):
-        
         paths = path.split("/")
+
         stack = []
 
-        for char in paths:
-            if char == "." or not char:
+        for path in paths:
+            if path == "." or not path:
                 continue
 
-            elif char == "..":
+            elif path == "..":
                 if stack:
                     stack.pop()
-
+            
             else:
-                stack.append(char)
+                stack.append(path)
 
         return "/" + "/".join(stack)
+        
