@@ -26,10 +26,8 @@ class Solution:
                 if decimal or exponent:
                     return False
                 
-                decimal = True            
-                
-     
-                
+                else:
+                    decimal = True            
                 
             else:
                 return False
