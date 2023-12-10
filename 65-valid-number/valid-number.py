@@ -1,16 +1,36 @@
-import re
-
 class Solution:
     def isNumber(self, s):
-        # Define the regular expression pattern for a valid number
-        pattern = re.compile(r'^[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?$')
-
-        # Use the pattern to match the input string
-        match = pattern.match(s)
-
-        # Check if the entire string matches the pattern
-        return match is not None
-
-# Example usage:
-#solution = Solution()
-#print(solution.isNumber("0"))  # Output: True
+        
+        digit = decimal = symbol = exponent = False
+        
+        for char in s:
+            if char.isdigit():
+                digit = True
+                
+            elif char in '+-':
+                if digit or decimal or symbol:
+                    return False
+                
+                else:
+                    symbol = True
+                
+            elif char in 'Ee':
+                if not digit or exponent:
+                    return False
+                
+                digit = decimal = symbol = False
+                exponent = True
+                
+            elif char == '.':
+                if decimal or exponent:
+                    return False
+                
+                decimal = True            
+                
+     
+                
+                
+            else:
+                return False
+            
+        return digit
