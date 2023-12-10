@@ -1,5 +1,5 @@
 class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+    def merge(self, intervals):
         
         start, end, result = 1, -1, []
         
