@@ -1,19 +1,21 @@
-class Solution(object):
+class Solution:
     def simplifyPath(self, path):
+        # Split the path using '/'
         paths = path.split("/")
-
         stack = []
 
-        for path in paths:
-            if path == "." or not path:
+        # Ignore empty and '.' components
+        for char in paths:
+            if char == "." or not char:
                 continue
 
-            elif path == "..":
+            # Handle '..' by popping the last directory from the stack (if not empty)
+            elif char == "..":
                 if stack:
                     stack.pop()
-            
-            else:
-                stack.append(path)
 
+            else:
+                stack.append(char)
+
+        # Construct the simplified canonical path by joining the directories with '/'
         return "/" + "/".join(stack)
-        
