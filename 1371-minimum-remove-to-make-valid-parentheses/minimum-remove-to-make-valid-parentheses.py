@@ -1,7 +1,3 @@
-#Input: s = "))((" | (()))
-# Stack = [           ]
-#Output: ""
-
 class Solution(object):
     def minRemoveToMakeValid(self, s):
         s = list(s)
@@ -21,4 +17,8 @@ class Solution(object):
         for index in stack:
             s[index] = ""
 
+
         return "".join(s)
+
+        # O(N) Time and space
+        
