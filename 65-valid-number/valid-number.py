@@ -18,8 +18,9 @@ class Solution:
                 if not digit or exponent:
                     return False
                 
-                digit = decimal = symbol = False
-                exponent = True
+                else:
+                    digit = decimal = symbol = False
+                    exponent = True
                 
             elif char == '.':
                 if decimal or exponent:
