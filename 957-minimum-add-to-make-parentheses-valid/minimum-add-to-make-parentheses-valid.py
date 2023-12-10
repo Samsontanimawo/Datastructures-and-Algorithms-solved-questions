@@ -1,6 +1,9 @@
+#Input: s = "(       )     )"
+#Output: 1
+
 class Solution(object):
     def minAddToMakeValid(self, s):
-        addedP = closedP = openP = 0
+        openP = closedP = addedP = 0
 
         for char in s:
             if char == "(":
@@ -9,11 +12,11 @@ class Solution(object):
             elif char == ")":
                 if closedP < openP:
                     closedP +=1
-
+                
                 else:
                     addedP +=1
 
-        addedP += openP -closedP
+        addedP += openP - closedP
 
         return addedP
         
