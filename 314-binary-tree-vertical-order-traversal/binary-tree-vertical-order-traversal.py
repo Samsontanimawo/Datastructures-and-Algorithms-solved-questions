@@ -1,38 +1,38 @@
-from collections import deque, defaultdict
+# Keep track of the min column value
+# Keep track of the max column
+# Use a default dictionary = defaultdict(list)
+# When we go left of the tree = negative
+# When we go right of the tree = positive
+#[3,  9,  8,  4,  0,  1,  7,  2,  5]
+# 0   -1  +1  -2  0   0   +2 +1  -1 -- Column index
+# We need a queue for level order traversal. FIFO PRINCIPLE
 
 class Solution(object):
     def verticalOrder(self, root):
-        # Base case: If the tree is empty, return an empty list
         if not root:
             return []
 
-        # Initialize variables: minColumn and maxColumn for column range,
-        # queue for BFS, and hashmap to store nodes at each column
-        minColumn, maxColumn, queue, hashmap = 0, 0, deque([(root, 0)]), defaultdict(list)
 
-        # Perform BFS traversal
+        minColumn = maxColumn = 0
+        hashmap = defaultdict(list)
+        queue = deque([(root, 0)]) # ROOT = NODE. 0 = COLUMN INDEX
+ 
+        
         while queue:
-            node, column = queue.popleft()
+            node, columnIndex = queue.popleft() # Pop off while there's something in the queue
 
-            # Check if the node is not None
             if node:
-                # Store the node's value in the hashmap at the corresponding column
-                hashmap[column].append(node.val)
+                hashmap[columnIndex].append(node.val)
+                minColumn = min(minColumn, columnIndex)
+                maxColumn = max(maxColumn, columnIndex)
 
-                # Update minColumn and maxColumn based on the current column
-                minColumn = min(minColumn, column)
-                maxColumn = max(maxColumn, column)
+            if node.left:
+                queue.append((node.left, columnIndex -1))
+                
+            if node.right:
+                queue.append((node.right, columnIndex + 1))
 
-                # Enqueue the left child with a decreased column index
-                queue.append((node.left, column - 1))
-                # Enqueue the right child with an increased column index
-                queue.append((node.right, column + 1))
+        return [hashmap[index] for index in range(minColumn, maxColumn + 1)]
 
-        # Construct the result by extracting nodes' values for each column
-        result = [hashmap[index] for index in range(minColumn, maxColumn + 1)]
 
-        return result
 
-"""
-O(N) TIME & SPACE
-"""
