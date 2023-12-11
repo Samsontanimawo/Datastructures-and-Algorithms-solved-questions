@@ -15,5 +15,5 @@ class Solution(object):
             else:
                 right = mid
 
-        return left
+        return left or right
         
