@@ -1,11 +1,12 @@
 class Solution(object):
     def verticalOrder(self, root):
+
         if not root:
             return None
-
-        minColumn = maxColumn = 0 # Both column starts at [00]
-        hashmap = defaultdict(list) # The key = column. The value is the list value for every node in the column
-        queue = deque([(root, 0)]) # Use breath first search = It uses queue. Depth first search uses stack
+            
+        minColumn = maxColumn = 0
+        hashmap = defaultdict(list)
+        queue = deque([(root, 0)])
 
         while queue:
             node, columnIndex = queue.popleft()
@@ -22,9 +23,6 @@ class Solution(object):
                 queue.append((node.right, columnIndex + 1))
 
         return [hashmap[index] for index in range(minColumn, maxColumn + 1)]
-        # +1 because ranges are not inclusive at the endpoint. We need to use the last endpoint.
 
-            
-
-        
+        # O(N) TIME. O(1) Space
         
