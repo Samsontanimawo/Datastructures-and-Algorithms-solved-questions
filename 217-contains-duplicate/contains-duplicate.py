@@ -10,3 +10,4 @@ class Solution(object):
                 hashmap[num] = 1
 
         return False
+        
