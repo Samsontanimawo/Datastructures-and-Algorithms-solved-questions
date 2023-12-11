@@ -1,6 +1,7 @@
 class Solution(object):
     def validWordAbbreviation(self, word, abbr):
-        
+        # word = "internationalization", abbr = "i12iz4n"
+        #         LEFT                    RIGHT
         left = right = 0 #word, abbr
         
         while left < len(word) and right < len(abbr):
