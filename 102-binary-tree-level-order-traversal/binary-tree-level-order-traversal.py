@@ -3,8 +3,8 @@ class Solution:
     def levelOrder(self, root):
         
         
-        if root is None:
-            return []
+        if not root:
+            return None
         
         queue = [root]
         new_queue = []
