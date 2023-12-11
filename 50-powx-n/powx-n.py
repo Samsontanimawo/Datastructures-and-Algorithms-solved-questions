@@ -1,24 +1,23 @@
-# X raise to power n
+# Anything raised to power 0 = 1
+# Anything raised to -1 = 1/n
+# Negative 
+# Positive
 
-#      if      n    0  if n == even. E.g 2
-#      if     X     1
-#      if     X     -1
-#             4/2  = 2 Return 2, 4//2^2
-#             2
-class Solution:
+class Solution(object):
     def myPow(self, x, n):
         
-        if n < 0:
-            x = 1/x
-            n = -n
+        if n == 0:
+            return 1
 
-        result = 1.0
+        if n == 1:
+            return x
 
-        while n>0:
-            if n % 2 == 1:
-                result *= x
+        if n == -1:
+            return 1/x
 
-            x *= x
-            n //= 2
+        if n%2==0:
+            return self.myPow(x, n//2) ** 2
 
-        return result
+        else:
+            return self.myPow(x, n//2) * self.myPow(x, n//2 + 1)
+        
