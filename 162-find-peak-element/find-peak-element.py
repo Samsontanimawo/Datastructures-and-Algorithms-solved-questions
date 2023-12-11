@@ -1,3 +1,7 @@
+# 1    6    7     8    9   1  0
+# |                           |
+# L                    M                 R
+
 class Solution(object):
     def findPeakElement(self, nums):
         left, right = 0, len(nums)-1
@@ -12,5 +16,4 @@ class Solution(object):
                 right = mid
 
         return left
-
-        #123455678912
+        
