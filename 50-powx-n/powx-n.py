@@ -14,10 +14,12 @@ class Solution(object):
 
         if n == -1:
             return 1/x
-
-        if n%2==0:
+       
+       # If n is even, pow(x, n) = pow(x, n/2) * pow(x, n/2).
+        if n%2==0: # 2^4 = 2^2 X 2^2 = 
             return self.myPow(x, n//2) ** 2
-
-        else:
+            
+# If n is odd, pow(x, n) = pow(x, n/2) * pow(x, n/2) * x.
+        else: # Odd numbers = 2^5 = 2^4 X 2^1 = 2^2 X 2^2 X 2^1
             return self.myPow(x, n//2) * self.myPow(x, n//2 + 1)
         
