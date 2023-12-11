@@ -1,14 +1,19 @@
-class Solution(object):
+class Solution:
     def twoSum(self, nums, target):
+        
         hashmap = {}
-
+        
         for index, num in enumerate(nums):
-            difference = target - num
-
-            if difference in hashmap:
-                return [hashmap[difference], index]
-
-            hashmap[num] = index
-
-        return 
+            diff = target - nums[index]
+            
+            if diff in hashmap:
+                return [hashmap[diff], index]
+            
+            else:
+                hashmap[num] = index
+                
+                """
+                O(N) Time and Space
+                
+                """
         
