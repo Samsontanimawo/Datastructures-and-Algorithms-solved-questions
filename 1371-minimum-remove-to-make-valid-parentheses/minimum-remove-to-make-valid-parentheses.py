@@ -17,8 +17,7 @@ class Solution(object):
         for index in stack:
             s[index] = ""
 
-
         return "".join(s)
 
-        # O(N) Time and space
+        # O(N) TIME AND SPACE
         
