@@ -7,7 +7,7 @@ class Solution:
             return []
         
         queue = [root]
-        next_queue = []
+        new_queue = []
         level = []
         result = []
         
@@ -17,16 +17,16 @@ class Solution:
                 level.append(root.val)
                 
                 if root.left:
-                    next_queue.append(root.left)
+                    new_queue.append(root.left)
                     
                 if root.right:
-                    next_queue.append(root.right)
+                    new_queue.append(root.right)
                     
             result.append(level)
             
             level = []
-            queue = next_queue
-            next_queue = []
+            queue = new_queue
+            new_queue = []
             
         return result
     
