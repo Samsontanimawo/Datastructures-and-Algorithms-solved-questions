@@ -1,13 +1,13 @@
 class Solution(object):
     def isNumber(self, s):
-        decimal = exponent = symbol = digit = False
+        decimal = digit = exponent = symbol = False
 
         for char in s:
-            if char.isdigit():
+            if char.isdigit(): #4567
                 digit = True
 
             elif char in "+-":
-                if decimal or symbol or digit:
+                if decimal or symbol or digit: # +-9 or --9
                     return False
 
                 else:
@@ -16,8 +16,9 @@ class Solution(object):
             elif char in "eE":
                 if not digit or exponent:
                     return False
+
                 else:
-                    digit = symbol = decimal = False
+                    decimal = digit = symbol = False
                     exponent = True
 
             elif char == ".":
