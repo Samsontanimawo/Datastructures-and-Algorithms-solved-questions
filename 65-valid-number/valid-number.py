@@ -1,6 +1,6 @@
 class Solution(object):
     def isNumber(self, s):
-        decimal = exponent = digit = symbol = False
+        decimal = exponent = digit = symbol = 0
         # decimal = .
         # exponent = eE
         # digit = 5667
