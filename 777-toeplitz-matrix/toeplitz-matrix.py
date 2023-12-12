@@ -9,4 +9,6 @@ class Solution(object):
                     return False
 
         return True
+
+        # O(M x N) time. O( m + n) space
         
