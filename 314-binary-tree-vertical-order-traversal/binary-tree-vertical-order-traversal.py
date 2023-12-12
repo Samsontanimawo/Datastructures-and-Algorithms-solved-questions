@@ -2,7 +2,7 @@ class Solution(object):
     def verticalOrder(self, root):
 
         if not root:
-            return None
+            return []
             
         minColumn = maxColumn = 0
         hashmap = defaultdict(list)
@@ -23,6 +23,5 @@ class Solution(object):
                 queue.append((node.right, columnIndex + 1))
 
         return [hashmap[index] for index in range(minColumn, maxColumn + 1)]
-
-        # O(N) TIME. O(1) Space
         
+        # O(n) TIME AND SPACE
