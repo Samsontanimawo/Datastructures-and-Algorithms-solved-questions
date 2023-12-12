@@ -4,7 +4,7 @@
 # Output: [0,2,3]
 
 # maxHeight = 3
-# Result = [  4 3 1 ]
+# Result = [  4 3 1 ] = [1 3 4]
 
 
 
@@ -22,3 +22,5 @@ class Solution(object):
                 maxHeight = heights[index]
 
         return result[::-1]
+
+        # o(n) TIME AND SPACE
