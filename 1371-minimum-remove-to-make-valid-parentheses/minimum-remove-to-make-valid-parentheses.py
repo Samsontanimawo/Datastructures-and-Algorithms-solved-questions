@@ -19,5 +19,5 @@ class Solution(object):
 
         return "".join(s)
 
-        # O(N) TIME AND SPACE
+        # O(N) time and space
         
