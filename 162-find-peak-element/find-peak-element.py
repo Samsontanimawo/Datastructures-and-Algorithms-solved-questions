@@ -13,4 +13,6 @@ class Solution(object):
 
         return left or right
 
+        # logN time. O(1) space
+
         
