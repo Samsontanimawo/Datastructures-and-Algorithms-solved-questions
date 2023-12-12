@@ -3,7 +3,7 @@ class Solution(object):
 
         if not root:
             return []
-            
+
         minColumn = maxColumn = 0
         hashmap = defaultdict(list)
         queue = deque([(root, 0)])
@@ -23,5 +23,3 @@ class Solution(object):
                 queue.append((node.right, columnIndex + 1))
 
         return [hashmap[index] for index in range(minColumn, maxColumn + 1)]
-        
-        # O(n) TIME AND SPACE
