@@ -10,7 +10,9 @@ class Solution(object):
             return 1/x
 
         elif n%2==0:
-            return self.myPow(x, n//2)**2
+            return self.myPow(x, n//2)**2 
+            # 2^4 = 16
+            # (2 ^ 2) ^ 2 = 16
 
         else:
             return self.myPow(x, n//2) * self.myPow(x, n//2 + 1)
