@@ -33,3 +33,4 @@ class Solution(object):
 
         return digit
         
+        # O(N) TIME. O(1) SPACE
