@@ -9,3 +9,5 @@ class Solution(object):
 
         return pCopy or qCopy
         
+
+        # O(N) time and space
