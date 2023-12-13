@@ -1,9 +1,9 @@
 class Solution(object):
     def middleNode(self, head):
-        slow = fast = head
+        fast = slow = head
 
         while fast and fast.next:
-            slow = slow.next
             fast = fast.next.next
+            slow = slow.next
 
         return slow
