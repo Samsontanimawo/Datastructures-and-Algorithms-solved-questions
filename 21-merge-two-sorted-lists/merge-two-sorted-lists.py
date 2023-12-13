@@ -1,4 +1,4 @@
-class Solution:
+class Solution(object):
     def mergeTwoLists(self, list1, list2):
         if not list1:
             return list2
