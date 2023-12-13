@@ -8,8 +8,8 @@ class Solution(object):
 
         max_level = 1  # Initialize the level with the maximum sum to 1
         max_sum = float('-inf')  # Initialize the maximum sum to negative infinity
-        level = 1
-        queue = [root]
+        level = 1 # To keep track of the current level
+        queue = [root] # Put the first number of the tree in the queue
 
         while queue:
             level_sum = 0
