@@ -1,7 +1,6 @@
 class Solution(object):
     def isValid(self, s):
-        brackets = { ")":"(", "]":"[", "}":"{"}
-
+        brackets = { ")":"(", "]":"[", "}":"{" }
         stack = []
 
         for char in s:
@@ -16,3 +15,5 @@ class Solution(object):
                 stack.append(char)
 
         return stack == []
+
+        
