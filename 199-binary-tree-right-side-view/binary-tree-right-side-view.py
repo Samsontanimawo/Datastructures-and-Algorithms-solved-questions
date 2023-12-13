@@ -17,9 +17,9 @@ class Solution(object):
                     nextLevel.append(node.right)
 
             # Append the value of the rightmost node at the current level
-            rightSideView.append(queue[-1].val)
-
-            # Update the queue for the next level
+            rightSideView.append(node.val)
             queue = nextLevel
+            nextLevel = []
+
 
         return rightSideView
