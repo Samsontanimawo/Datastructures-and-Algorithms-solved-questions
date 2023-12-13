@@ -5,9 +5,10 @@ class Solution(object):
         
         rightSideView = []
         queue = [root]
+        nextLevel = []
 
         while queue:
-            nextLevel = []  # Initialize nextLevel for the current level
+            #nextLevel = []  # Initialize nextLevel for the current level
 
             for node in queue:
                 if node.left:
