@@ -1,23 +1,18 @@
 class Solution(object):
     def singleNonDuplicate(self, nums):
-        left, right = 0, len(nums) - 1
+    # Initialize the result to 0. Since XOR with 0 does not change a number,
+# this will be the neutral element for XOR.
+        result = 0
 
-        while left < right:
-            mid = left + (right - left) // 2
+# Loop through each number in the array.
+        for num in nums:
+    # Use XOR operation to update the result.
+    # XORing a number with itself results in 0,
+    # and XORing 0 with a number doesn't change the number.
+            result = num ^ result
 
-        # Make mid even to ensure we compare elements at even indices
-            if mid % 2 == 1:
-                mid -= 1
+# After the loop, 'result' will contain the XOR of all elements in the array.
+# The unique element that appears only once will be the final value of 'result'.
 
-        # Check if the single element is on the left or right side
-            if nums[mid] == nums[mid + 1]:
-                left = mid + 2
-            else:
-                right = mid
-
-        return nums[left]
-
-
-# nums = [1, 1, 2, 3, 3, 4, 4, 8, 8]
- #              L      
-        
+# Return the unique element.
+        return result
