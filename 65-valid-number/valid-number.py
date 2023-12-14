@@ -1,13 +1,13 @@
 class Solution(object):
     def isNumber(self, s):
-        digit = decimal = symbol = exponent = False
+        digit = decimal = exponent = symbol = False
 
         for char in s:
             if char.isdigit():
                 digit = True
 
             elif char in "+-":
-                if symbol or decimal or digit:
+                if decimal or symbol or digit:
                     return False
 
                 else:
@@ -33,4 +33,4 @@ class Solution(object):
 
         return digit
         
-        # O(N) TIME. O(1) SPACE
+        # O(N) TIME | O(1) SPACE
