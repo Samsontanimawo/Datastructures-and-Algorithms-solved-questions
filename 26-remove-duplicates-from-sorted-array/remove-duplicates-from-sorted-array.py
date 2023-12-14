@@ -10,3 +10,5 @@ class Solution(object):
                 left +=1
 
         return len(nums)
+
+
