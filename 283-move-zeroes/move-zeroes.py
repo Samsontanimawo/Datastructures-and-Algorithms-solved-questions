@@ -7,4 +7,4 @@ class Solution(object):
                 nums[left], nums[right] = nums[right], nums[left]
                 left +=1
 
-            # O(n) time. O(1) SPACE
+        return len(nums)
