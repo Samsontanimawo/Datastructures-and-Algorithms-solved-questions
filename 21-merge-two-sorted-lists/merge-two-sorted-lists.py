@@ -13,4 +13,3 @@ class Solution(object):
         else:
             list2.next = self.mergeTwoLists(list2.next, list1)
             return list2
-        
