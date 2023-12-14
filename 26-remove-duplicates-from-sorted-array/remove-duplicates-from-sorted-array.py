@@ -1,7 +1,7 @@
 class Solution(object):
     def removeDuplicates(self, nums):
         left = 0
-        right = len(nums)-1
+        #
 
         while left < len(nums)-1:
             if nums[left] == nums[left + 1]:
@@ -9,6 +9,6 @@ class Solution(object):
 
             else:
                 left +=1
-                right -1
+                #
 
         return len(nums)
