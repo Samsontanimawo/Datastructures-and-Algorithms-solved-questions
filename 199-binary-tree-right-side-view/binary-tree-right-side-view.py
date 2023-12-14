@@ -3,7 +3,7 @@ class Solution(object):
         if not root:
             return []
 
-        queue, result, level = [root], [], []
+        queue, level, result = [root], [], []
 
         while queue:
             for node in queue:
@@ -18,3 +18,5 @@ class Solution(object):
             level = []
 
         return result
+
+        
