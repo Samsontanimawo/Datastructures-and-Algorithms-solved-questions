@@ -1,7 +1,7 @@
 class Solution(object):
     def isToeplitzMatrix(self, matrix):
         if not matrix:
-            return []
+            return None
 
         for row in range(len(matrix)-1):
             for col in range(len(matrix[0])-1):
@@ -10,5 +10,4 @@ class Solution(object):
 
         return True
 
-        # O(M x N) time. O( m + n) space
-        
+        # O( M x N ) time | O(M + N ) space
