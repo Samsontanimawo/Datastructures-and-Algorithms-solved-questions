@@ -1,19 +1,18 @@
 class Solution(object):
     def isValid(self, s):
-        openP = "({["
-        closedP = ")}]"
-
+        brackets = { ")":"(", "]":"[","}":"{" }
         stack = []
-
+        
         for char in s:
-            if char in openP:
-                stack.append(char)
-
-            elif char in closedP:
-                if not stack or openP.index(stack.pop()) != closedP.index(char):
+            if char in brackets:
+                if stack and stack[-1] == brackets[char]:
+                    stack.pop()
+                else:
                     return False
 
             else:
-                return False
+                stack.append(char)
 
-        return stack == []
+        return not stack
+
+            
