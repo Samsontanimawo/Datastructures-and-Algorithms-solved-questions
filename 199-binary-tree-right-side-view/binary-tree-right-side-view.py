@@ -1,10 +1,10 @@
-class Solution:
+class Solution(object):
     def rightSideView(self, root):
         if not root:
             return []
-        
+
         queue, result, level = [root], [], []
-        
+
         while queue:
             for node in queue:
                 if node.left:
