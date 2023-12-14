@@ -23,3 +23,4 @@ class Solution(object):
                 right +=1
 
         return left == len(word) and right == len(abbr)
+        
