@@ -8,3 +8,5 @@ class Solution(object):
                 left +=1
 
         return len(nums)
+
+# O(N) Time and O(1) SPACE
