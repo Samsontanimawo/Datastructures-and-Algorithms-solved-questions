@@ -18,4 +18,4 @@ class Solution(object):
 
         return True
 
-# O(N) TIME | O(1) Space
+        # O(N) Time | O(1) SPACE
