@@ -1,5 +1,5 @@
-# word = "internationalization"
-# abbr = "i12iz4n"
+# word = "internationalization", abbr = "i12iz4n"
+#         L                              R
 
 class Solution(object):
     def validWordAbbreviation(self, word, abbr):
