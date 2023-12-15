@@ -11,6 +11,5 @@ class Solution(object):
                     sum += helper(item.getList(), depth + 1)
 
             return sum
-        return helper(nestedList, 1)
 
-    
+        return helper(nestedList, 1)
