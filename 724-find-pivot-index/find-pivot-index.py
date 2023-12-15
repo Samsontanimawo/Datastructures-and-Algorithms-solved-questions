@@ -3,12 +3,12 @@ class Solution(object):
         total_sum = sum(nums)
         left_sum = 0
 
-        for i in range(len(nums)):
-            total_sum -= nums[i]
+        for index in range(len(nums)):
+            total_sum -= nums[index]
 
             if left_sum == total_sum:
-                return i
+                return index
 
-            left_sum += nums[i]
+            left_sum += nums[index]
 
         return -1
