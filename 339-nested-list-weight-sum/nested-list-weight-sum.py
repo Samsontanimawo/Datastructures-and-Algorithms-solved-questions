@@ -1,15 +1,15 @@
 class Solution(object):
     def depthSum(self, nestedList):
         
-        def helper(list, depth):
+        def helper(list, level):
             sum = 0
             
             for item in list:
                 if item.isInteger():
-                    sum += item.getInteger() * depth
+                    sum += item.getInteger() * level
                     
                 else:
-                    sum += helper(item.getList(), depth + 1)
+                    sum += helper(item.getList(), level + 1)
                     
             return sum
         
