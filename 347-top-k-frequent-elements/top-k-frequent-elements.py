@@ -1,8 +1,5 @@
-from typing import List
-from collections import Counter
-
 class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+    def topKFrequent(self, nums, k):
         # Step 1: Count the frequency of each element in the input list
         freq = Counter(nums)
         
@@ -44,5 +41,5 @@ class Solution:
 # Additional information in comments
 """
 O(N) TIME
-O(1) SPACE
+O(N) SPACE
 """
