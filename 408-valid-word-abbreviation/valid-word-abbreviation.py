@@ -1,5 +1,6 @@
-# word = "internationalization", abbr = "i12iz4n"
-#         L                              R
+#    word = "internationalization", abbr = "i12iz4n"
+#            L                              R
+#
 
 class Solution(object):
     def validWordAbbreviation(self, word, abbr):
@@ -23,4 +24,6 @@ class Solution(object):
                 right +=1
 
         return left == len(word) and right == len(abbr)
-        
+
+
+     
