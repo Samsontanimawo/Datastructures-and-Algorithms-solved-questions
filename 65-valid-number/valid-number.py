@@ -1,15 +1,15 @@
 class Solution(object):
     def isNumber(self, s):
-        digit = decimal = exponent = symbol = False
+        digit = decimal = symbol = exponent = False
 
         for char in s:
             if char.isdigit():
                 digit = True
 
             elif char in "+-":
-                if decimal or symbol or digit:
+                if symbol or decimal or digit:
                     return False
-
+                
                 else:
                     symbol = True
 
@@ -18,7 +18,7 @@ class Solution(object):
                     return False
 
                 else:
-                    digit = decimal = symbol = False
+                    digit = symbol = decimal = False
                     exponent = True
 
             elif char == ".":
@@ -32,5 +32,3 @@ class Solution(object):
                 return False
 
         return digit
-        
-        # O(N) TIME | O(1) SPACE
