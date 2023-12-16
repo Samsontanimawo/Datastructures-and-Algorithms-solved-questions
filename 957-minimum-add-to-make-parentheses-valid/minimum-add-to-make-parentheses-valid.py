@@ -1,6 +1,6 @@
 class Solution(object):
     def minAddToMakeValid(self, s):
-        openP = closedP = addedP = 0
+        addedP = closedP = openP = 0
 
         for char in s:
             if char == "(":
@@ -17,4 +17,5 @@ class Solution(object):
 
         return addedP
 
-        # O(N) Time | O(1) SPACE
+# O(N) time | O(1) SPACE
+        
