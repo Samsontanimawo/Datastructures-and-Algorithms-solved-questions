@@ -11,12 +11,11 @@ class Solution(object):
 
             return True
 
-        left = 0
-        right = len(s)-1
+        left, right = 0, len(s)-1
 
         while left < right:
             if s[left] != s[right]:
-                return palindromeCheck(left + 1, right) or palindromeCheck(left, right-1)
+                return palindromeCheck(left + 1, right) or palindromeCheck(left, right - 1)
 
             else:
                 left +=1
@@ -24,5 +23,5 @@ class Solution(object):
 
         return True
 
-        # O(N) TIME | O()
-        
+# O(N) Time | O(1) SPACE
+
