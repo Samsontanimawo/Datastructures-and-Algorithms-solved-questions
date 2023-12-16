@@ -1,5 +1,6 @@
 class Solution(object):
     def reverseList(self, head):
+
         newList = None
         currentList = head
 
@@ -10,4 +11,3 @@ class Solution(object):
             currentList = nextNode
 
         return newList
-        
