@@ -11,4 +11,3 @@ class Solution(object):
         return result[::-1]
 
 # O(N) Time and space
-        
