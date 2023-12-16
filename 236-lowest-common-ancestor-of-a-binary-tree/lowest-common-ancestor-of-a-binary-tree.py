@@ -15,3 +15,5 @@ class Solution(object):
 
         else:
             return left or right
+
+# o(n) time and space
