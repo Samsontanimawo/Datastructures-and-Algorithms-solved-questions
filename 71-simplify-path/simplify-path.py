@@ -14,4 +14,4 @@ class Solution(object):
             else:
                 stack.append(path)
 
-        return "/" + "/".join(stack)
+        return "/"+"/".join(stack)
