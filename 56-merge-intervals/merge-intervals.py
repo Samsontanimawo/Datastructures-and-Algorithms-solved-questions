@@ -3,9 +3,9 @@ class Solution:
 
         if not intervals:
             return []
-            
+
         # Define indices for start and end in the interval tuples
-        start, end, result = 0, 1, []
+        start, end, result = 1, -1, []
         
         # Sort the intervals based on their start times
         intervals.sort()
@@ -13,12 +13,12 @@ class Solution:
         # Iterate through the sorted intervals
         for interval in intervals:
             # If the result is empty or the current interval does not overlap with the last merged interval
-            if result == [] or result[-1][end] < interval[start]:
+            if result == [] or result[end][start] < interval[0]:
                 # Add the non-overlapping interval to the result
                 result.append(interval)
             else:
                 # Merge the overlapping intervals by updating the end of the last merged interval
-                result[-1][end] = max(result[-1][end], interval[end])
+                result[end][start] = max(result[end][start], interval[end])
                 
         return result
 
