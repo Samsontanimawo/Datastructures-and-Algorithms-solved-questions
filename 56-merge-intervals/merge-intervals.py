@@ -1,5 +1,9 @@
 class Solution:
     def merge(self, intervals):
+
+        if not intervals:
+            return []
+            
         # Define indices for start and end in the interval tuples
         start, end, result = 0, 1, []
         
