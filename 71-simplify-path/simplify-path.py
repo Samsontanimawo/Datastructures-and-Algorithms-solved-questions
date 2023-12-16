@@ -15,3 +15,5 @@ class Solution(object):
                 stack.append(path)
 
         return "/"+"/".join(stack)
+
+# O(N) TIME AND SPACE
