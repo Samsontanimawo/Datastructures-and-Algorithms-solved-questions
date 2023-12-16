@@ -14,4 +14,3 @@ class Solution(object):
             return sum
 
         return helper(nestedList, 1)
-        
