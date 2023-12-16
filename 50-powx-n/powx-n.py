@@ -14,3 +14,6 @@ class Solution(object):
 
         else:
             return self.myPow(x, n//2)* self.myPow(x, n//2 + 1)
+
+# Time Complexity: O(logn)
+# Space Complexity: O(logn)
