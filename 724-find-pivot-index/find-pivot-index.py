@@ -9,6 +9,7 @@ class Solution(object):
             if left_sum == total_sum:
                 return index
 
-            left_sum += nums[index]
+            else:
+                left_sum = left_sum + nums[index]
 
         return -1
