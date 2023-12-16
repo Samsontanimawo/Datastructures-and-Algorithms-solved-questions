@@ -1,7 +1,7 @@
 class Solution(object):
     def minRemoveToMakeValid(self, s):
-        stack = []
         s = list(s)
+        stack = []
 
         for index in range(len(s)):
             if s[index] == "(":
@@ -19,4 +19,4 @@ class Solution(object):
 
         return "".join(s)
 
-        # O(N) time and space
+# O(N) TIME AND SPACE
