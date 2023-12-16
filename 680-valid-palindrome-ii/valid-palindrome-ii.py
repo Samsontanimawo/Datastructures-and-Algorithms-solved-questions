@@ -23,5 +23,5 @@ class Solution(object):
 
         return True
 
-# O(N) Time | O(1) SPACE
 
+# 0(N) TIME | O(1) SPACE
