@@ -1,15 +1,16 @@
 class Solution(object):
     def pivotIndex(self, nums):
-        right_sum = sum(nums) # Sum of all the numbers = 1,7,3,6,5,6 = 28
-        left_sum = 0
+        totalSum = sum(nums)
+
+        leftSum = 0
 
         for index in range(len(nums)):
-            right_sum = right_sum - nums[index] # numbers index = currentNumber. E.g 1
+            totalSum = totalSum - nums[index]
 
-            if left_sum == right_sum:
+            if leftSum == totalSum:
                 return index
 
             else:
-                left_sum = left_sum + nums[index] # numbers index = currentNumber. E.g 1
+                totalSum -= nums[index]
 
         return -1
