@@ -13,7 +13,8 @@ class Solution(object):
                 return node_dict[original]
         
         # Create a copy of the current node
-            copy_node = Node(original.val)
+            else:
+                copy_node = Node(original.val)
         
         # Add the copy node to the dictionary
             node_dict[original] = copy_node
