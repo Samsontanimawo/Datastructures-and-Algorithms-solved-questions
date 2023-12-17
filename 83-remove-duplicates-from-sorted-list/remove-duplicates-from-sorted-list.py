@@ -1,13 +1,13 @@
 class Solution(object):
     def deleteDuplicates(self, head):
         
-        p1 = head
+        currentList = head
 
-        while p1 and p1.next:
-            if p1.val == p1.next.val:
-                p1.next = p1.next.next
+        while currentList and currentList.next:
+            if currentList.val == currentList.next.val:
+                currentList.next = currentList.next.next
 
             else:
-                p1 = p1.next
+                currentList = currentList.next
 
         return head
