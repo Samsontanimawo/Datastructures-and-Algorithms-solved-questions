@@ -4,11 +4,10 @@ class Solution(object):
         s = list(s)
 
         for char in s:
-            if char in stack and stack[-1] == char:
+            if stack and stack[-1] == char:
                 stack.pop()
 
             else:
                 stack.append(char)
 
         return "".join(stack)
-# O(N) Time and Space        
