@@ -1,6 +1,6 @@
 class Solution(object):
     def removeVowels(self, s):
-        vowels = " aAeEiIoOuU"
+        vowels = "aAeEiIoOuU"
         result = []
 
         for char in s:
@@ -9,4 +9,3 @@ class Solution(object):
 
         return "".join(result)
 
-        
