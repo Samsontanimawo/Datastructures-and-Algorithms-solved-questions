@@ -1,3 +1,6 @@
+# Input: lists = [[1,4,5],[1,3,4],[2,6]]
+# Output: [1,1,2,3,4,4,5,6]
+
 class Solution:
     def mergeKLists(self, lists):
         
@@ -14,9 +17,7 @@ class Solution:
         left = self.mergeKLists(lists[:mid])
         right = self.mergeKLists(lists[mid:])
         
-        return self.mergeTwoLists(left, right)   
-        
-        
+        return self.mergeTwoLists(left, right)         
         
     def mergeTwoLists(self, list1, list2):
         if not list1:
@@ -30,5 +31,5 @@ class Solution:
             return list1
 
         else:
-          list2.next = self.mergeTwoLists(list2.next, list1)
-          return list2
+            list2.next = self.mergeTwoLists(list2.next, list1)
+            return list2
