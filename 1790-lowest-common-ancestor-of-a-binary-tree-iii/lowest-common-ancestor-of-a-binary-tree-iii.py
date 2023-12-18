@@ -1,6 +1,5 @@
 class Solution(object):
     def lowestCommonAncestor(self, p, q):
-        
         pCopy = p
         qCopy = q
 
@@ -12,6 +11,3 @@ class Solution(object):
             qCopy = qCopy.parent if qCopy else p
 
         return pCopy or qCopy
-
-# O(N) Time and Space
-        
