@@ -3,9 +3,9 @@ class Solution(object):
         if not intervals:
             return []
 
-        intervals.sort()
-        
         start, end, result = 1, -1, []
+
+        intervals.sort()
 
         for interval in intervals:
             if result == [] or result[end][start] < interval[0]:
