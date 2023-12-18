@@ -1,5 +1,5 @@
 class Solution:
-    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+    def insert(self, intervals, newInterval):
         result = []
         
         for interval in intervals:
