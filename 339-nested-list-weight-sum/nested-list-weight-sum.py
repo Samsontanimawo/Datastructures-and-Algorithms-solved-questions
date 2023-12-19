@@ -43,6 +43,8 @@
 
 class Solution(object):
     def depthSum(self, nestedList):
+        
+        
         def helper(nestedList, depth):
             sum = 0
 
@@ -56,6 +58,4 @@ class Solution(object):
             return sum
 
         return helper(nestedList, 1)
-        
-        # O(N) time and space
         
