@@ -4,7 +4,8 @@ class Solution(object):
             return []
 
         queue = deque([(root, 0)])
-        minColumn = maxColumn = 0
+        minColumn = 0
+        maxColumn = 0
         hashmap = defaultdict(list)
 
         while queue:
@@ -23,6 +24,4 @@ class Solution(object):
 
         return [hashmap[index] for index in range(minColumn, maxColumn + 1)]
 
-        # O(N) TIME AND SPACE
-        
-        
+# O(N) Time and Space
