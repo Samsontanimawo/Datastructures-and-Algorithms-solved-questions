@@ -2,7 +2,7 @@ class Solution(object):
     def mergeKLists(self, lists):
         length = len(lists)
 
-        if length == 0:
+        if not lists or length == 0:
             return None
 
         if length == 1:
@@ -29,4 +29,3 @@ class Solution(object):
         else:
             list2.next = self.mergeTwoLists(list2.next, list1)
             return list2
-
