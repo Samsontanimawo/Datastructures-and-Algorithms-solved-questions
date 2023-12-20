@@ -1,15 +1,15 @@
 class Solution(object):
     def mergeKLists(self, lists):
-        length = len(lists)
 
-        if length == 0 or not lists:
+        if len(lists) == 0 or not lists:
             return None
+       
 
 
-        if length == 1:
+        if len(lists) == 1:
             return lists[0]
 
-        mid = length // 2
+        mid = len(lists) // 2
 
         left = self.mergeKLists(lists[:mid])
         right = self.mergeKLists(lists[mid:])
