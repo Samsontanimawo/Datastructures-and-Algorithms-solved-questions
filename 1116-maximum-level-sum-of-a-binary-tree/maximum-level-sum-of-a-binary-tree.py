@@ -28,8 +28,9 @@ class Solution(object):
                 max_sum = level_sum
                 max_level = level
 
-            queue = next_level
-            level +=1
+            else:
+                queue = next_level
+                level +=1
 
         return max_level
 
