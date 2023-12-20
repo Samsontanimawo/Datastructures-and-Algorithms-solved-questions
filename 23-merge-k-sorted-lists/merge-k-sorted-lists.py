@@ -2,8 +2,7 @@ class Solution(object):
     def mergeKLists(self, lists):
 
         if len(lists) == 0 or not lists:
-            return None
-       
+            return None    
 
 
         if len(lists) == 1:
@@ -15,9 +14,6 @@ class Solution(object):
         right = self.mergeKLists(lists[mid:])
 
         return self.mergeTwoLists(left, right)
-
-
-
 
     def mergeTwoLists(self, list1, list2):
         if not list1:
