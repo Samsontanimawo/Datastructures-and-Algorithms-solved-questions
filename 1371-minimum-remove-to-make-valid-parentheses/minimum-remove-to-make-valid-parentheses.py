@@ -8,22 +8,26 @@
 
 class Solution(object):
     def minRemoveToMakeValid(self, s):
-       s = list(s)
-       stack = []
+        stack, s = [], list(s)
 
-       for index in range(len(s)):
-           if s[index] == "(":
-               stack.append(index)
+        for index in range(len(s)):
+          if s[index] == "(":   
+            stack.append(index) # STACK [ lee(t(c ]
 
-           elif s[index] == ")":
-               if stack:
-                    stack.pop()
-               else:
-                    s[index] = ""
+          elif s[index] == ")": 
+            if stack:
+              stack.pop() # STACK [)))]
 
-       for index in stack:
-            s[index] = ""
+            else:
+              s[index] = "" # Ignore letters
 
-       return "".join(s)
+        for index in stack:
+          s[index] = "" # STACK []
+
+        return "".join(s) # lee(t(c)o)der
 
 # O(N) TIME AND SPACE
+
+# test = "lee(t(c)o)de)r)))"
+
+# print(Solution().minimumRemoveToMakeAValidParenthesis(test))
