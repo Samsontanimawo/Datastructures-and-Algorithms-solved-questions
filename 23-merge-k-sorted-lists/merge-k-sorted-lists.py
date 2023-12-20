@@ -1,9 +1,7 @@
 class Solution(object):
     def mergeKLists(self, lists):
-
-        if len(lists) == 0 or not lists:
-            return None    
-
+        if not lists or len(lists) == 0:
+            return None
 
         if len(lists) == 1:
             return lists[0]
