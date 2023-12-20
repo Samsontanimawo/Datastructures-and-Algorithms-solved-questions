@@ -2,7 +2,7 @@ class Solution(object):
     def merge(self, intervals):
 
         intervals.sort()
-        
+
         if not intervals:
             return []
 
@@ -10,7 +10,7 @@ class Solution(object):
         start, end = 1, -1
 
         for interval in intervals:
-            if result == [] or result[end][start] < interval[0]:
+            if not result or result[end][start] < interval[0]:
                 result.append(interval)
 
             else:
