@@ -3,9 +3,7 @@ class Solution(object):
         
         result = currentSum = 0
         symbol = 1
-        stack = []
-
-        
+        stack = []        
         
         for char in s:
             if char.isdigit():
