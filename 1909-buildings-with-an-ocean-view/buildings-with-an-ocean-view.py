@@ -1,7 +1,10 @@
 class Solution(object):
     def findBuildings(self, heights):
-        result = []
+        if not heights:
+            return None
+
         maxHeight = 0
+        result = []
 
         for index in range(len(heights)-1,-1,-1):
             if heights[index] > maxHeight:
@@ -10,4 +13,4 @@ class Solution(object):
 
         return result[::-1]
 
-# O(N) Time and space
+# O(N) Time and Space
