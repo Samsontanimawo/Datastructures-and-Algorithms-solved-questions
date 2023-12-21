@@ -27,3 +27,4 @@ class Solution(object):
         else:
             list2.next = self.mergetTwoLists(list2.next, list1)
             return list2
+# O(Nlogk) time | O(logK) space
