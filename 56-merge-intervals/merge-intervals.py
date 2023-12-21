@@ -1,20 +1,19 @@
 class Solution(object):
     def merge(self, intervals):
-        if not intervals:
-            return []
+       if not intervals:
+           return None
 
-        start, end = 1, -1
-        result = []
+       start, end, result = 1, -1, []
 
-        intervals.sort()
+       intervals.sort()
 
-        for interval in intervals:
-            if result == [] or result[end][start] < interval[0]:
-                result.append(interval)
+       for interval in intervals:
+           if result == [] or result[end][start] < interval[0]:
+               result.append(interval)
 
-            else:
+           else:
                 result[end][start] = max(result[end][start], interval[end])
 
-        return result
+       return result
 
-# O(nlogN) time | O(1) Space
+# nlogn time | O(N) space
