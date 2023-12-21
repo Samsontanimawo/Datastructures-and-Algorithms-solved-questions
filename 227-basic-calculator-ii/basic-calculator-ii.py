@@ -11,10 +11,13 @@ class Solution(object):
             elif char in '+-*/':
                 if symbol == "+":
                     stack.append(num)
+
                 elif symbol == "-":
                     stack.append(-num)
+
                 elif symbol == "*":
                     stack[-1] *= num
+                    
                 elif symbol == "/":
                     # In Python 3, use integer division //
                     stack[-1] = int(stack[-1] / float(num))
