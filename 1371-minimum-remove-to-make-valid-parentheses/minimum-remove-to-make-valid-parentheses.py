@@ -1,33 +1,38 @@
-#Input: s = "lee(t(c)o)de)"
-# Input: s = "l   e   e   (   t  (  c  )  o  ) d   e   )"
-#             0   1   2   3  4   5  6  7  8  9 10  11  12
-# STACK = [l e   e   t c o  d   e )]
-# New stack = l   e   e   (   t  (  c  )  o  ) d   e
-# Convert the list to s = lee(t(c)o)de
-# Output = "lee(t(c)o)de"
-
 class Solution(object):
     def minRemoveToMakeValid(self, s):
-        stack, s = [], list(s)
+        open_count = 0
+        to_remove_left = set()
+        to_remove_right = set()
 
-        for index in range(len(s)):
-          if s[index] == "(":   
-            stack.append(index) # STACK [ lee(t(c ]
+    # First pass: Mark invalid left parentheses
+        for i, char in enumerate(s):
+            if char == '(':
+                open_count += 1
+            elif char == ')':
+                if open_count > 0:
+                    open_count -= 1
+                else:
+                    to_remove_right.add(i)
 
-          elif s[index] == ")": 
-            if stack:
-              stack.pop() # STACK [)))]
+    # Second pass: Mark invalid right parentheses
+        open_count = 0
+        for i in range(len(s) - 1, -1, -1):
+           char = s[i]
+           if char == ')':
+               open_count += 1
+               
+           elif char == '(':
+               if open_count > 0:
+                   open_count -= 1
+               else:
+                   to_remove_left.add(i)
 
-            else:
-              s[index] = "" # Ignore letters
+    # Combine all indices to remove
+        to_remove = to_remove_left.union(to_remove_right)
 
-        for index in stack:
-          s[index] = "" # STACK []
+        result = []
+        for i, char in enumerate(s):
+           if i not in to_remove:
+               result.append(char)
 
-        return "".join(s) # lee(t(c)o)der
-
-# O(N) TIME AND SPACE
-
-# test = "lee(t(c)o)de)r)))"
-
-# print(Solution().minimumRemoveToMakeAValidParenthesis(test))
+        return ''.join(result)
