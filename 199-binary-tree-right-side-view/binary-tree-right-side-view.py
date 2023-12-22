@@ -1,12 +1,9 @@
 class Solution(object):
     def rightSideView(self, root):
-
         if not root:
-            return []
-
-        result = []
-        level = []
-        queue = [root]
+            return None
+            
+        queue, result, level = [root], [], []
 
         while queue:
             for node in queue:
@@ -21,5 +18,3 @@ class Solution(object):
             level = []
 
         return result
-
-# O(N) Time and Space
