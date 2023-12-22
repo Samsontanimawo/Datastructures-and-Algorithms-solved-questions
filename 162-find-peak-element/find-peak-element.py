@@ -6,11 +6,9 @@ class Solution(object):
             mid = (left + right)//2
 
             if nums[mid] < nums[mid + 1]:
-                left = mid  +1 
+                left = mid + 1
 
             else:
-                right = mid 
+                right = mid
 
         return left or right
-
-# O(logN) time. O(1) SPACE
