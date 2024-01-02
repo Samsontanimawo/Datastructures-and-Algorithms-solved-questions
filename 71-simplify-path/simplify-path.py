@@ -1,10 +1,14 @@
 class Solution(object):
     def simplifyPath(self, path):
         paths = path.split("/")
+
+        if not path:
+            return []
+
         stack = []
 
         for path in paths:
-            if path == "." or not path:
+            if not path or path == ".":
                 continue
 
             elif path == "..":
@@ -15,5 +19,3 @@ class Solution(object):
                 stack.append(path)
 
         return "/" + "/".join(stack)
-
-# O(N) TIME AND SPACE
