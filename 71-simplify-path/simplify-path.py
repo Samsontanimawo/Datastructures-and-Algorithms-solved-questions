@@ -1,10 +1,7 @@
 class Solution(object):
     def simplifyPath(self, path):
         paths = path.split("/")
-
-        if not path:
-            return []
-
+        
         stack = []
 
         for path in paths:
