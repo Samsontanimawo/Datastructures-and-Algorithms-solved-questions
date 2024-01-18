@@ -10,10 +10,10 @@ class Solution(object):
         left = self.mergeKLists(lists[:mid])
         right = self.mergeKLists(lists[mid:])
 
-        return self.mergetTwoLists(left, right)
+        return self.mergeTwoLists(left, right)
 
-    
-    def mergetTwoLists(self, list1, list2):
+
+    def mergeTwoLists(self, list1, list2):
         if not list1:
             return list2
 
@@ -21,10 +21,9 @@ class Solution(object):
             return list1
 
         elif list1.val < list2.val:
-            list1.next = self.mergetTwoLists(list1.next, list2)
+            list1.next = self.mergeTwoLists(list1.next, list2)
             return list1
 
         else:
-            list2.next = self.mergetTwoLists(list2.next, list1)
+            list2.next = self.mergeTwoLists(list2.next, list1)
             return list2
-# O(Nlogk) time | O(logK) space
