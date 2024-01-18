@@ -3,6 +3,9 @@ class Solution(object):
         pCopy = p
         qCopy = q
 
+        if pCopy == qCopy:
+            return pCopy or qCopy
+
         if pCopy.parent == qCopy.parent:
             return pCopy.parent or qCopy.parent
 
@@ -11,5 +14,3 @@ class Solution(object):
             qCopy = qCopy.parent if qCopy else p
 
         return pCopy or qCopy
-
-# O(N) Time | O(1) Space
