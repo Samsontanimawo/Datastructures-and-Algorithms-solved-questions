@@ -1,9 +1,10 @@
-#word = "internationalization", abbr = "i12iz4n"
-#        L                              R
+# word = "internationalization", abbr = "i12iz4n"
+#         L                              R
 
 class Solution(object):
     def validWordAbbreviation(self, word, abbr):
         left = right = 0
+
         while left < len(word) and right < len(abbr):
             if word[left] != abbr[right]:
                 if not abbr[right].isdigit() or abbr[right] == "0":
@@ -23,7 +24,3 @@ class Solution(object):
                 right +=1
 
         return left == len(word) and right == len(abbr)
-
-
-                
-        
