@@ -1,6 +1,3 @@
-# word = "internationalization", abbr = "i12iz4n"
-#         L                              R
-
 class Solution(object):
     def validWordAbbreviation(self, word, abbr):
         left = right = 0
@@ -16,8 +13,7 @@ class Solution(object):
                     steps = steps * 10 + int(abbr[right])
                     right +=1
 
-                else:
-                    left += steps
+                left += steps
 
             else:
                 left +=1
