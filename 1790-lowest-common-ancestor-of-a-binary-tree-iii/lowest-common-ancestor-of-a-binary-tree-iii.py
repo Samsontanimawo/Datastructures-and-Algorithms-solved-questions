@@ -4,7 +4,7 @@ class Solution(object):
         qCopy = q
 
         if pCopy.parent == qCopy.parent:
-            return pCopy.parent or qCopy.parent
+            return qCopy.parent
 
         while pCopy != qCopy:
             pCopy = pCopy.parent if pCopy else q
