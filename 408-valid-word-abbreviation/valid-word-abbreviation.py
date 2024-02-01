@@ -13,7 +13,8 @@ class Solution(object):
                     steps = steps * 10 + int(abbr[right])
                     right +=1
 
-                left += steps
+                else:
+                    left += steps
 
             else:
                 left +=1
