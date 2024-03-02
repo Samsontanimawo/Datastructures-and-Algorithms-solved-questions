@@ -11,3 +11,6 @@ class Solution(object):
             qCopy = qCopy.parent if qCopy else p
 
         return pCopy or qCopy
+
+# O(N) time
+# O(1) space
