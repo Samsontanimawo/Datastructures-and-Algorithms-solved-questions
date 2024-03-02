@@ -11,6 +11,7 @@ class Solution(object):
 
             return True
 
+
         left, right = 0, len(s)-1
 
         while left < right:
@@ -23,5 +24,5 @@ class Solution(object):
 
         return True
 
-
-# 0(N) TIME | O(1) SPACE
+# O(N) SPACE because of recursive call
+# O (N) time
