@@ -1,20 +1,20 @@
 class Solution(object):
-    def minRemoveToMakeValid(self, s):
+    def minRemoveToMakeValid(self, string):
         stack = []
-        s = list(s)
+        string = list(string)
 
-        for index in range(len(s)):
-            if s[index] == "(":
+        for index in range(len(string)):
+            if string[index] == "(":
                 stack.append(index)
 
-            elif s[index] == ")":
+            elif string[index] == ")":
                 if stack:
                     stack.pop()
                 else:
-                    s[index] = ""
+                    string[index] = ""
 
         for index in stack:
-            s[index] = ""
+            string[index] = ""
 
-        return "".join(s)
+        return "".join(string)
            
