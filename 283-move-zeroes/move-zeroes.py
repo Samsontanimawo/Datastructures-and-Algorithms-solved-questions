@@ -9,6 +9,8 @@ class Solution(object):
             if nums[right] != 0:
                 nums[left], nums[right] = nums[right], nums[left]
                 left += 1  # Move the left pointer to the right
-            right += 1  # Move the right pointer to the right
+
+            # Move the right pointer to the right
+            right += 1
 
         return len(nums)
