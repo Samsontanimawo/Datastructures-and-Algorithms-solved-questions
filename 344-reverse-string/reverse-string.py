@@ -1,3 +1,6 @@
+#s = ["h","e","l","l","o"]
+#      L               R
+
 class Solution(object):
     def reverseString(self, s):
         left = 0
@@ -8,4 +11,6 @@ class Solution(object):
             left +=1
             right -=1
 
-        return s
+
+
+        return len(s)
