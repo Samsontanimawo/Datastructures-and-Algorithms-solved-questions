@@ -1,0 +1,24 @@
+def find_local_minimum(nums):
+    left = 0                     # Initialize left pointer
+    right = len(nums) - 1        # Initialize right pointer
+
+    while left <= right:         # Perform binary search until left and right pointers meet
+        mid = left + (right - left) // 2   # Calculate the middle index
+        
+        # Check if the middle element is a local minimum
+        if (mid == 0 or nums[mid - 1] > nums[mid]) and (mid == len(nums) - 1 or nums[mid + 1] > nums[mid]):
+            return nums[mid]       # Return the local minimum if found
+        
+        # If the element to the left of mid is smaller, search left
+        elif mid > 0 and nums[mid - 1] < nums[mid]:
+            right = mid - 1      # Update the right pointer
+        
+        # Otherwise, search right
+        else:
+            left = mid + 1       # Update the left pointer
+
+    return None  # If no local minimum is found
+
+# Test the function
+nums = [2, 5, 6, 7, 9, 10, 11, 1]
+print("Local minimum:", find_local_minimum(nums))
