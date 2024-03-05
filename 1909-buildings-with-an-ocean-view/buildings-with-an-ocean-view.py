@@ -11,4 +11,7 @@ class Solution(object):
                 result.append(index)
                 maxHeight = heights[index]
 
+            else:
+                continue
+
         return result[::-1]
