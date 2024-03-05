@@ -1,5 +1,9 @@
 class Solution(object):
     def minRemoveToMakeValid(self, string):
+
+        if not string:
+            return []
+            
         stack = []
         string = list(string)
 
