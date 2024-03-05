@@ -10,11 +10,13 @@ class Solution(object):
             elif string[index] == ")":
                 if stack:
                     stack.pop()
+
                 else:
                     string[index] = ""
 
         for index in stack:
             string[index] = ""
 
+        
         return "".join(string)
-           
+        
