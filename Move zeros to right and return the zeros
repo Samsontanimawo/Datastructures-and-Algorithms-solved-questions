@@ -1,0 +1,27 @@
+# Move zeros to right and return the zeros
+
+class Solution(object):
+  def moveZeros(self, nums):
+    left = len(nums)-1
+    right = len(nums)-1
+    zeros = 0
+   
+    for num in nums:
+      if num == 0:
+        zeros += 1
+      
+
+    while left >= 0: # To move zeros to left and return zeros, just change left to right in the code #while left >= 0
+      if nums[right] !=0:
+        nums[right], nums[left] = nums[left], nums[right] 
+        left -=1 
+      
+      right -=1
+    
+#   return zeros
+    return nums
+
+
+test = [1, 6, 0, 0, 1, 5, 0]
+
+print(Solution().moveZeros(test))
