@@ -15,3 +15,5 @@ class Solution(object):
 
         else:
             return left or right
+
+# O(N) TTME | SPACE
