@@ -1,0 +1,20 @@
+# Duplicate even numbers in an array
+# E.g [1, 2, 5, 6, 8] = Output = [ 1, 2, 2, 5, 6, 6, 8, 8]
+
+
+class Solution(object):  # Define a class named Solution
+  def duplicateEvenNums(self, nums):  # Define a method named duplicateEvenNums within the class Solution, which takes a list called nums as input
+    result = [ ]  # Initialize an empty list named result which will store the final output
+
+    for num in nums:  # Iterate over each element in the input list nums
+      result.append(num)  # Append the current element to the result list
+
+      if num%2==0:  # Check if the current number is even
+        result.append(num)  # If it is even, append it again to the result list
+
+    return result  # Return the final result list after iterating through all elements in the input list
+
+test = [ 1, 2, 5, 6, 8 ]  # Define a list called test with some test input data
+print(Solution().duplicateEvenNums(test))  # Create an instance of the Solution class and call the duplicateEvenNums method with the test input, then print the result
+
+O(N) TIME AND SPACE
