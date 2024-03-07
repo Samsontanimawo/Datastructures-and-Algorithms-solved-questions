@@ -1,0 +1,19 @@
+class Solution(object):  # Define a class named Solution
+    def duplicateOddNums(self, nums):
+        result = []
+
+        for num in nums:
+          result.append(num)
+
+          if not num%2 == 0:
+            result.append(num)
+            result.append(num)
+      
+
+        return result
+
+test = [ 1, 2, 1, 8]
+
+print(Solution().duplicateOddNums(test))
+
+# O(N) TIME AND SPACE
