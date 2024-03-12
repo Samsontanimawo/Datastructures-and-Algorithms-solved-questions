@@ -1,5 +1,7 @@
+from collections import Counter
+
 class Solution:
-    def topKFrequent(self, nums, k):
+
         # Step 1: Count the frequency of each element in the input list
         freq = Counter(nums)
         
@@ -27,8 +29,10 @@ class Solution:
             # Recursively perform quick select on the appropriate partition
             if partition > k:
                 return quickSelect(left, partition - 1)
+            
             elif partition < k:
                 return quickSelect(partition + 1, right)
+            
             else:
                 return unique[partition]
             

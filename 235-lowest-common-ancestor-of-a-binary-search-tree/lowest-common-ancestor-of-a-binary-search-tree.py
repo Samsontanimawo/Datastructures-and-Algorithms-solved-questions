@@ -16,4 +16,4 @@ class Solution(object):
         else:
             return left or right
 
-        # O(N) Time and Space
+        # O(N) Time and Space complexity
