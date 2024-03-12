@@ -1,3 +1,5 @@
+# Peak number is a number that's bigger than its neighbor
+
 class Solution(object):
     def findPeakElement(self, nums):
         left = 0
@@ -13,3 +15,6 @@ class Solution(object):
                 right = mid
 
         return left 
+
+test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+print(Solution().findPeakElement(test))
