@@ -1,0 +1,24 @@
+# Given a sorted array of n elements, possibly with duplicates, find the number of occurrences of the target element.
+# Input: arr = [4, 4, 8, 8, 8, 15, 16, 23, 23, 42], target = 8
+# Output: 3
+
+
+class Solution(object):
+  def findOccurance(self, nums, target):
+    result = [              ]
+    occurance = 0
+
+    for num in nums:
+      if num == target:
+        occurance += 1
+
+      else:
+        result.append(num)
+
+    return occurance
+
+test = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 8]
+target = 1
+print(Solution().findOccurance(test, target))
+
+# O(N) TIME AND SPACE
