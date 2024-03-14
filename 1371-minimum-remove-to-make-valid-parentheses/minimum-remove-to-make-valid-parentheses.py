@@ -1,26 +1,22 @@
 class Solution(object):
-    def minRemoveToMakeValid(self, string):
-
-        if not string:
-            return []
-            
+    def minRemoveToMakeValid(self, s):
         stack = []
-        string = list(string)
+        s = list(s)
 
-        for index in range(len(string)):
-            if string[index] == "(":
+        for index in range(len(s)):
+            if s[index] == "(":
                 stack.append(index)
 
-            elif string[index] == ")":
+            elif s[index] == ")":
                 if stack:
                     stack.pop()
 
                 else:
-                    string[index] = ""
+                    s[index] = ""
 
         for index in stack:
-            string[index] = ""
+            s[index] = ""
 
-        
-        return "".join(string)
-        
+        return "".join(s)
+
+# O(N) TIME | SPACE
