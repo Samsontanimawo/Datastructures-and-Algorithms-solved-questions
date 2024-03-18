@@ -2,15 +2,15 @@ class Solution(object):
     def verticalOrder(self, root):
         minColumn = 0
         maxColumn = 0
-        hashmap = defaultdict(list) # 1 - 0
         queue = deque([(root, 0)])
+        hashmap = defaultdict(list)
 
         if not root:
             return None
 
         while queue:
             node, columnIndex = queue.popleft()
-
+            
             if node:
                 hashmap[columnIndex].append(node.val)
                 minColumn = min(minColumn, columnIndex)
