@@ -5,12 +5,10 @@ class Solution(object):
                 nums1[m+n-1] = nums2[n-1]
                 n -=1
 
-            else:                   
+            else:
                 nums1[m+n-1] = nums1[m-1]
                 m -=1
 
         while n>0:
             nums1[m+n-1] = nums2[n-1]
             n -=1
-
-# O(N) TIME and SPACE
