@@ -1,7 +1,10 @@
 class Solution(object):
     def isPalindrome(self, s):
-        left, right = 0, len(s)-1
+        #Remove all the non-alphanumeric characters
+        # Convert it to lower
 
+        left = 0
+        right = len(s)-1
         while left < right:
             while left < right and not s[left].isalnum():
                 left +=1
@@ -13,9 +16,12 @@ class Solution(object):
                 return False
 
             else:
-                left +=1
-                right -=1
+               left +=1
+               right -=1
 
-        return True
+        return True 
 
-        # O(N) Time | O(1) SPACE
+# Time = O(N)
+# Space = O()1)
+
+            
