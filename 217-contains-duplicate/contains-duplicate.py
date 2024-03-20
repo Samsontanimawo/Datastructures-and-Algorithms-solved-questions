@@ -1,13 +1,15 @@
 class Solution(object):
     def containsDuplicate(self, nums):
-        nums.sort()
-        left = 0
 
-        while left < len(nums)-1:
-            if nums[left] == nums[left + 1]:
+        hashmap = {}
+
+        for num in nums:
+            if num in hashmap:
                 return True
 
             else:
-                left +=1
+                hashmap[num] = 1
 
+        
         return False
+                
