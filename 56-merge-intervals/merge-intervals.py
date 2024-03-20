@@ -3,10 +3,11 @@ class Solution(object):
         if not intervals:
             return None
 
-        intervals.sort()
-
-        start, end = 1, -1
+        start = 1
+        end = -1
         result = []
+
+        intervals.sort()
 
         for interval in intervals:
             if not result or result[end][start] < interval[0]:
