@@ -2,8 +2,8 @@ class Solution(object):
     def rangeSumBST(self, root, low, high):
         if not root:
             return 0
-        
-        elif root.val < low:
+
+        if root.val < low:
             return self.rangeSumBST(root.right, low, high)
 
         elif root.val > high:
