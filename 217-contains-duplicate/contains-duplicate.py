@@ -1,15 +1,20 @@
 class Solution(object):
     def containsDuplicate(self, nums):
 
-        hashmap = {}
+        nums.sort()
 
-        for num in nums:
-            if num in hashmap:
+        left = 0
+        right = len(nums)-1
+
+        while left < len(nums)-1:
+            if nums[left] == nums[left + 1]:
                 return True
 
             else:
-                hashmap[num] = 1
+                left +=1
+                right -=1
 
-        
         return False
-                
+
+# O(NLOGN) TIME
+# O(1) SPACE
