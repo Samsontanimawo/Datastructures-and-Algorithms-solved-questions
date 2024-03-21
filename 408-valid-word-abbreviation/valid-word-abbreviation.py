@@ -7,7 +7,11 @@ class Solution(object):
         right = 0
 
         while left < len(word) and right < len(abbr):
-            if word[left] != abbr[right]:
+            if word[left] == abbr[right]:
+                left +=1
+                right +=1
+            
+            else:
                 if not abbr[right].isdigit() or abbr[right] == "0":
                     return False
 
@@ -18,11 +22,7 @@ class Solution(object):
                     steps = steps * 10 + int(abbr[right])
                     right +=1
 
-                left += steps
-
-            else:
-                left +=1
-                right +=1
+                left += steps    
 
         return left == len(word) and right == len(abbr)
         # O(M x N) TIME
