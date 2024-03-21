@@ -15,7 +15,7 @@ class Solution(object):
                     s[index] = ""
 
             else:
-                continue
+                continue # Ignore all the letters
 
         for index in stack:
             s[index] = ""
