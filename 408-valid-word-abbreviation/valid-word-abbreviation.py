@@ -7,7 +7,8 @@ class Solution(object):
                 if not abbr[right].isdigit() or abbr[right] == "0":
                     return False
 
-                steps = 0
+                else:
+                    steps = 0
 
                 while right < len(abbr) and abbr[right].isdigit():
                     steps = steps * 10 + int(abbr[right])
