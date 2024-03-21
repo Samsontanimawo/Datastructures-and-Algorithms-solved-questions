@@ -25,4 +25,5 @@ class Solution(object):
                 right +=1
 
         return left == len(word) and right == len(abbr)
-        
+        # O(M x N) TIME
+        # O(1) SPACE
