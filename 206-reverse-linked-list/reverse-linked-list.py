@@ -10,4 +10,3 @@ class Solution(object):
             currentList = nextNode
 
         return newList
-
