@@ -1,6 +1,5 @@
 class Solution(object):
     def containsDuplicate(self, nums):
-
         nums.sort()
 
         left = 0
@@ -16,5 +15,5 @@ class Solution(object):
 
         return False
 
-# O(NLOGN) TIME
+# O(nlogN) time = Sorting 
 # O(1) SPACE
