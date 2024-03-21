@@ -1,16 +1,16 @@
 class Solution(object):
     def verticalOrder(self, root):
-        minColumn = 0
-        maxColumn = 0
-        queue = deque([(root, 0)])
-        hashmap = defaultdict(list)
-
         if not root:
             return None
 
+        minColumn = 0
+        maxColumn = 0
+        hashmap = defaultdict(list)
+        queue = deque([(root, 0)])
+
         while queue:
             node, columnIndex = queue.popleft()
-            
+
             if node:
                 hashmap[columnIndex].append(node.val)
                 minColumn = min(minColumn, columnIndex)
@@ -23,3 +23,5 @@ class Solution(object):
                 queue.append((node.right, columnIndex + 1))
 
         return [hashmap[index] for index in range(minColumn, maxColumn + 1)]
+
+# O(N) TIME AND SPACE
