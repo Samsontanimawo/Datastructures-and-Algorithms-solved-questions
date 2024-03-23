@@ -1,19 +1,19 @@
 class Solution(object):
     def isNumber(self, s):
-       symbol = exponent = decimal = digit = False
+        symbol = digit = decimal = exponent = False
 
-       for char in s:
-           if char.isdigit():
-               digit = True
+        for char in s:
+            if char.isdigit():
+                digit = True
 
-           elif char in "+-":
-                if symbol or decimal or digit:
+            elif char in "+-":
+                if decimal or symbol or digit:
                     return False
 
                 else:
                     symbol = True
 
-           elif char in "eE":
+            elif char in "eE":
                 if not digit or exponent:
                     return False
 
@@ -21,14 +21,16 @@ class Solution(object):
                     digit = decimal = symbol = False
                     exponent = True
 
-           elif char in ".":
+            elif char == ".":
                 if decimal or exponent:
                     return False
 
                 else:
                     decimal = True
 
-           else:
+            else:
                 return False
 
-       return digit
+        return digit
+
+# O(N) Time and O(1) space
