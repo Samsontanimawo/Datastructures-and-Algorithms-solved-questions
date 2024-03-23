@@ -1,0 +1,48 @@
+# Define the Solution class
+class Solution(object):
+    def findKthSmallest(self, nums, k):
+        # Calculate the index of the kth smallest element
+        k = k - 1
+        
+        # Define a function for quick selection
+        def quickSelect(left, right):
+            # Choose the pivot element (using the rightmost element)
+            pivot = nums[right]
+            # Initialize the partition index
+            partition = left
+            
+            # Partitioning step
+            for index in range(left, right):
+                if nums[index] <= pivot:
+                    # Swap elements if they are smaller than or equal to the pivot
+                    nums[partition], nums[index] = nums[index], nums[partition]
+                    partition += 1
+            
+            # Move the pivot to its final sorted position
+            nums[partition], nums[right] = nums[right], nums[partition]
+            
+            # Recursively call quickSelect based on the partition index
+            if partition < k:
+                return quickSelect(partition + 1, right)
+            elif partition > k:
+                return quickSelect(left, partition - 1)
+            else:
+                # If the partition index matches k, return the kth smallest element
+                return nums[partition]
+        
+        # Call the quickSelect function with initial parameters
+        return quickSelect(0, len(nums) - 1)
+
+# Example 1
+nums1 = [3, 2, 1, 5, 6, 4]
+k1 = 2
+print("Example 1:")
+print("Array:", nums1)
+print("Kth smallest element:", Solution().findKthSmallest(nums1, k1))
+
+# Example 2
+nums2 = [1, 2, 3, 4, 5]
+k2 = 3
+print("\nExample 2:")
+print("Array:", nums2)
+print("Kth smallest element:", Solution().findKthSmallest(nums2, k2))
