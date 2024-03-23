@@ -3,10 +3,10 @@ class Solution(object):
         if not root:
             return None
 
+        queue = deque([(root, 0)])
+        hashmap = defaultdict(list)
         minColumn = 0
         maxColumn = 0
-        hashmap = defaultdict(list)
-        queue = deque([(root, 0)])
 
         while queue:
             node, columnIndex = queue.popleft()
@@ -24,4 +24,4 @@ class Solution(object):
 
         return [hashmap[index] for index in range(minColumn, maxColumn + 1)]
 
-# O(N) TIME AND SPACE
+        # O(N) Time and space
