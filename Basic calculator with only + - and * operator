@@ -1,0 +1,29 @@
+class Solution(object):
+    def basicCalculator(self, s):
+        currentSum = 0
+        result = 0
+        symbol = "+"
+        num = 0
+
+        for char in s + "+":
+            if char.isdigit():
+                num = num * 10 + int(char)
+            elif char in "+-*":
+                if symbol == "+":
+                    currentSum += num
+
+                elif symbol == "-":
+                  currentSum -=num 
+
+                elif symbol == "*":
+                    currentSum *= num
+                num = 0
+                symbol = char
+
+            elif char == " ":
+                continue
+
+        return result + currentSum
+
+test = "-1*2+3"
+print(Solution().basicCalculator(test))  
