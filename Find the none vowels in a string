@@ -1,0 +1,25 @@
+# Find the none vowels in a string
+
+class Solution(object):
+  def findVowels(self, s):
+    s = list(s)
+    left = 0
+    right = len(s)-1
+    result = []
+    vowels = "aAeEiIoOuU"
+
+    while left <= right:
+      if s[left] not in vowels:
+        result.append(s[left])
+
+      if s[right] not in vowels and right != left:
+        result.append(s[right])
+
+      left +=1
+      right -=1
+
+    return "".join(result)
+
+test = "Hello World" # Output = "HllWorld"
+print(Solution().findVowels(test))
+
