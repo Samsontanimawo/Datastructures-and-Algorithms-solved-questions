@@ -1,6 +1,6 @@
 class Solution(object):
     def isNumber(self, s):
-        digit = decimal = symbol = exponent = False
+        decimal = exponent = symbol = digit = False
 
         for char in s:
             if char.isdigit():
@@ -13,7 +13,7 @@ class Solution(object):
                 else:
                     symbol = True
 
-            elif char in "Ee":
+            elif char in "eE":
                 if not digit or exponent:
                     return False
 
@@ -31,5 +31,6 @@ class Solution(object):
             else:
                 return False
 
-
         return digit
+
+# O(N) TIME and O(1) SPACE
