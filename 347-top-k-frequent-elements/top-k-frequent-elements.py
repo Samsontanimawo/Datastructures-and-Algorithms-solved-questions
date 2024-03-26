@@ -1,4 +1,4 @@
-from collections import Counter
+from collections import *
 
 class Solution:
     def topKFrequent(self, nums, k):
@@ -6,8 +6,8 @@ class Solution:
         freq = Counter(nums)
         
         # Step 2: Create a list of unique elements
-       # nums = list(freq.keys())
-        nums = [num for num in freq.keys()]
+        nums = list(freq.keys())
+        # nums = [num for num in freq.keys()]
 
         
         # Calculate the position where the kth frequent element would be in the sorted list
