@@ -6,7 +6,9 @@ class Solution:
         freq = Counter(nums)
         
         # Step 2: Create a list of unique elements
-        nums = list(freq.keys())
+       # nums = list(freq.keys())
+        nums = [num for num in freq.keys()]
+
         
         # Calculate the position where the kth frequent element would be in the sorted list
         k = len(nums) - k
@@ -29,8 +31,10 @@ class Solution:
             # Recursively perform quick select on the appropriate partition
             if partition > k:
                 return quickSelect(left, partition - 1)
+
             elif partition < k:
                 return quickSelect(partition + 1, right)
+
             else:
                 return nums[partition]
             
