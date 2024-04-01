@@ -1,14 +1,19 @@
 class Solution:
     def lengthOfLastWord(self, s):
-        p, length = len(s), 0
+        # Initialize variables
+        index, length = len(s), 0
 
-        while p > 0:
-            p -= 1
-            # we're in the middle of the last word
-            if s[p] != ' ':
+        # Iterate through the string from right to left
+        while index > 0:
+            index -= 1  # Move the index one position to the left
+
+            # If the character is not a space, it's part of the last word
+            if s[index] != ' ':
                 length += 1
-            # here is the end of last word
+            # If we encounter a space and we've already counted some characters (i.e., we're in the last word),
+            # return the length of the last word
             elif length > 0:
                 return length
 
+        # Return the length of the last word
         return length
