@@ -2,7 +2,7 @@ class Solution(object):
     def rightSideView(self, root):
 
         if not root:
-            return None
+            return []
 
         queue = [root]
         level = []
