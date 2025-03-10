@@ -1,34 +1,27 @@
-
-class Solution:
+class Solution(object):
     def levelOrder(self, root):
-        
-        
         if not root:
-            return None
-        
-        queue = [root]
-        new_queue = []
-        level = []
+            return []
+
         result = []
-        
+        queue = [ root]
+        level = []
+
         while queue:
-            
-            for root in queue:
-                level.append(root.val)
-                
-                if root.left:
-                    new_queue.append(root.left)
-                    
-                if root.right:
-                    new_queue.append(root.right)
-                    
-            result.append(level)
-            
+            currentLevelValue = []
+
+            for node in queue:
+                currentLevelValue.append(node.val)
+
+                if node.left:
+                    level.append(node.left)
+
+                if node.right:
+                    level.append(node.right)
+
+            result.append(currentLevelValue)
+
+            queue = level
             level = []
-            queue = new_queue
-            new_queue = []
-            
-        return result
-    
-    # O(N) TIME AND SPACE
         
+        return result
