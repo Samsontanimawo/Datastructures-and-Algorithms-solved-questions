@@ -1,7 +1,7 @@
 class Solution:
     def canFinish(self, numCourses, prerequisites):
         # Build adjacency list
-        graph = {i: [] for i in range(numCourses)}
+        graph = defaultdict(list)
         for course, pre in prerequisites:
             graph[pre].append(course)  # Directed edge pre -> course
 
