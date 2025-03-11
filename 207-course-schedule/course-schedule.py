@@ -1,31 +1,32 @@
-from collections import deque
-
 class Solution:
     def canFinish(self, numCourses, prerequisites):
-        # Step 1: Build adjacency list and in-degree array
+        # Build adjacency list
         graph = {i: [] for i in range(numCourses)}
-        in_degree = [0] * numCourses
-        
         for course, pre in prerequisites:
             graph[pre].append(course)  # Directed edge pre -> course
-            in_degree[course] += 1     # Increment in-degree for course
 
-        # Step 2: Initialize queue with courses that have no prerequisites
-        queue = deque([i for i in range(numCourses) if in_degree[i] == 0])
-        completed_courses = 0
+        visited = [0] * numCourses  # 0 = unvisited, 1 = visiting, 2 = fully processed
 
-        # Step 3: Process courses in order
-        while queue:
-            current = queue.popleft()
-            completed_courses += 1  # Count completed courses
+        def hasCycle(course):
+            if visited[course] == 1:  # Cycle detected
+                return True
+            if visited[course] == 2:  # Already checked, no cycle
+                return False
+            
+            visited[course] = 1  # Mark as visiting
+            for neighbor in graph[course]:
+                if hasCycle(neighbor):
+                    return True  # Cycle found
 
-            for neighbor in graph[current]:
-                in_degree[neighbor] -= 1  # Reduce in-degree
-                if in_degree[neighbor] == 0:
-                    queue.append(neighbor)  # Add to queue when prerequisites are met
-        
-        # Step 4: Check if all courses are completed
-        return completed_courses == numCourses
+            visited[course] = 2  # Mark as processed
+            return False
+
+        # Check for cycles in all courses
+        for i in range(numCourses):
+            if visited[i] == 0 and hasCycle(i):
+                return False  # Cycle detected
+
+        return True  # No cycles, all courses can be completed
 
 # Example usage
 sol = Solution()
