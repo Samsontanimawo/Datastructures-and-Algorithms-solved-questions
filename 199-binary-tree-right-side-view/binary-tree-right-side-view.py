@@ -1,22 +1,32 @@
+# Travel the tree level by leve.
+# How do we keep track of the node?
+# Should I use stack or queue. DFS OR BFS. Since it's level by level. Then it's BFS:
+# Use a qeue = FIFO = pop nodes
+# 
+#         self.right = right
 class Solution(object):
     def rightSideView(self, root):
         if not root:
             return []
 
+        level = []
         result = []
-        nextLevel = []
         queue = [root]
 
-        while queue and root != None:
+        while queue:
             for node in queue:
                 if node.left:
-                    nextLevel.append(node.left)
+                    level.append(node.left)
 
                 if node.right:
-                    nextLevel.append(node.right)
+                    level.append(node.right)
 
             result.append(node.val)
-            queue = nextLevel
-            nextLevel = []
+            queue = level
+            level = []
 
         return result
+
+# O(N) time and space
+
+        
