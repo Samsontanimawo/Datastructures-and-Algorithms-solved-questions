@@ -1,12 +1,12 @@
 class Solution(object):
     def findDuplicate(self, nums):
-        hashmap = {}
+        duplicate = set()
 
         for num in nums:
-            if num in hashmap:
+            if num in duplicate:
                 return num
 
             else:
-                hashmap[num] = 1
+                duplicate.add(num)
 
-        return len(num)
+        return num
