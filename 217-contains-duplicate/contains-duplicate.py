@@ -8,5 +8,5 @@ class Solution(object):
 
             else:
                 duplicate[num] = 1
-
+                
         return False
