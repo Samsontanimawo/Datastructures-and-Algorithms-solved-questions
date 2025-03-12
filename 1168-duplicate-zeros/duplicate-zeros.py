@@ -3,10 +3,11 @@ class Solution(object):
         length = len(arr)
     
     # Iterate in reverse order
-        for i in range(length - 1, -1, -1):
+        for index in range(length - 1, -1, -1):
         # Duplicate zeros and shift elements to the right
-            if arr[i] == 0:
-                if i + 1 < length:
-                    arr[i + 1:] = arr[i:-1]
-                if i + 1 < length:
-                    arr[i + 1] = 0
+            if arr[index] == 0:
+                if index + 1 < length:
+                    arr[index + 1:] = arr[index:-1]
+
+                if index + 1 < length:
+                    arr[index + 1] = 0
