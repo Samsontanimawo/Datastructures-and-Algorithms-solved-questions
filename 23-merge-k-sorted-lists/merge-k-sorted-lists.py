@@ -1,6 +1,5 @@
 class Solution(object):
-    def mergeKLists(self, lists):
-      
+    def mergeKLists(self, lists):      
         if not lists:
             return None
 
@@ -11,6 +10,7 @@ class Solution(object):
             return lists[0]
 
         mid = len(lists)//2
+        
         left = self.mergeKLists(lists[:mid])
         right = self.mergeKLists(lists[mid:])
         
