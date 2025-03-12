@@ -1,6 +1,7 @@
 class Solution(object):
     def isPalindrome(self, s):
-        left, right = 0, len(s)-1
+        left = 0
+        right = len(s)-1
 
         while left < right:
             while left < right and not s[left].isalnum():
@@ -17,6 +18,3 @@ class Solution(object):
                 right -=1
 
         return True
-
-# O(N) TIME | O(1) Space
-        
