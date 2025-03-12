@@ -10,7 +10,7 @@ class Solution(object):
         
         # Count positive numbers
         pos = 0
-        for num in reversed(nums):
+        for num in nums[::-1]:
             if num > 0:
                 pos += 1
             else:
