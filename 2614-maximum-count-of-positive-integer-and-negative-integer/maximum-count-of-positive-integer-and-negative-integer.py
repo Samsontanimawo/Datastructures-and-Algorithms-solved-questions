@@ -1,20 +1,24 @@
 class Solution(object):
     def maximumCount(self, nums):
-    # Count negative numbers
-        neg = 0
+    # Initialize counter for negative numbers
+        negative = 0
+
+        # Iterate through the list to count negative numbers
         for num in nums:
             if num < 0:
-                neg += 1
+                negative += 1
             else:
-                break
+                break  # Stop counting once a non-negative number is encountered
         
-        # Count positive numbers
-        pos = 0
-        for num in nums[::-1]:
-            if num > 0:
-                pos += 1
-            else:
-                break
-        
-        return max(pos, neg)
+        # Initialize counter for positive numbers
+        positive = 0
 
+        # Iterate through the list in reverse to count positive numbers
+        for num in nums[:: -1]:
+            if num > 0:
+                positive += 1
+            else:
+                break  # Stop counting once a non-positive number is encountered
+        
+        # Return the maximum count between positive and negative numbers
+        return max(positive, negative)
