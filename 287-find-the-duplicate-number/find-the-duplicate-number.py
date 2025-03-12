@@ -1,12 +1,12 @@
 class Solution(object):
     def findDuplicate(self, nums):
-        duplicate = set()
+        duplicate = {}
 
         for num in nums:
             if num in duplicate:
                 return num
 
             else:
-                duplicate.add(num)
+                duplicate[num] = 1
 
         return num
