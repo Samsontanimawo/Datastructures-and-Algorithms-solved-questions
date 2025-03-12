@@ -16,4 +16,4 @@ class Solution:
             else:
                 stack.append(char)
 
-        return stack == []
+        return not stack
