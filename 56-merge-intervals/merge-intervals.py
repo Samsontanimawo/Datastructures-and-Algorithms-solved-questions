@@ -3,7 +3,7 @@ class Solution(object):
         if not intervals:
             return None
 
-        start, end, result = [1, -1, []]
+        start, end, result = [ 1, -1, [] ]
 
         intervals.sort()
 
