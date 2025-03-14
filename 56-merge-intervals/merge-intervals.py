@@ -3,12 +3,9 @@ class Solution(object):
         if not intervals:
             return None
 
-        start = 1
-        end = -1
+        start, end, result = [1, -1, []]
 
         intervals.sort()
-
-        result = []
 
         for interval in intervals:
             if not result or result[end][start] < interval[0]:
@@ -18,5 +15,3 @@ class Solution(object):
                 result[end][start] = max(result[end][start], interval[end])
 
         return result
-
-# O(NlogN) TIME + O(N) space
