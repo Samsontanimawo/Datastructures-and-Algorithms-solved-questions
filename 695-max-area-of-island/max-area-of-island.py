@@ -6,7 +6,7 @@ class Solution(object):
         (up, down, left, right). We use DFS with a 'seen' set to track visited cells.
         """
 
-        seen = set()  # Set to track visited cells
+        visited = set()  # Set to track visited cells
 
         def area(r, c):
             """
@@ -15,11 +15,11 @@ class Solution(object):
             # Base case: If the current cell is out of bounds OR
             # already visited OR is water (0), return 0.
             if not (0 <= r < len(grid) and 0 <= c < len(grid[0])  # Check bounds
-                    and (r, c) not in seen  # Ensure cell is not visited
+                    and (r, c) not in visited  # Ensure cell is not visited
                     and grid[r][c]):  # Ensure cell is land (1)
                 return 0
 
-            seen.add((r, c))  # Mark cell as visited
+            visited.add((r, c))  # Mark cell as visited
 
             # Explore all 4 directions (down, up, right, left)
             return (1 + area(r+1, c) +  # Move Down
