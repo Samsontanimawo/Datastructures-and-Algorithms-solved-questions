@@ -1,13 +1,19 @@
 class Solution:
     def isValid(self, s):
 
-        brackets = { "]":"[", "}":"{", ")":"("}
+        hashmap = { 
+            
+            "]":"[", 
+            "}":"{", 
+            ")":"("
+                                    
+            }
 
-        stack = []      # [ [             ] string = "[({)][{}{"
+        stack = []     
 
         for char in s:
-            if char in brackets:
-                if stack and stack[-1] == brackets[char]:
+            if char in hashmap:
+                if stack and stack[-1] == hashmap[char]:
                     stack.pop()
 
                 else:
@@ -16,4 +22,4 @@ class Solution:
             else:
                 stack.append(char)
 
-        return not stack
+        return stack == []
