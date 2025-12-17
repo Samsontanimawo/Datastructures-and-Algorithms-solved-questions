@@ -1,3 +1,14 @@
+# nums =  [1, 2, 2, 3, 3,     4]
+#          |  |               |
+#          L  L+1             R
+
+# [0,   1,    2,    3     4]
+#                   |     |    
+#                   L    L+1   
+#                   R
+# [0,   1,    2,    3     4]
+
+
 class Solution(object):
     def removeDuplicates(self, nums):
         left, right = 0, len(nums)-1
@@ -11,3 +22,4 @@ class Solution(object):
                 right -=1
 
         return len(nums)
+        
